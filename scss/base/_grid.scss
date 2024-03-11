@@ -1,0 +1,148 @@
+@use "sass:math";
+
+// các breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+// độ rộng tối đa với mỗi một infix breakpoint
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px,
+    xxl: 1370px,
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// gutter
+$gutters: (
+    0: 0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+);
+
+// gutter padding
+%gutter-padding {
+    padding-left: calc(var(--grid-gutter-x) / 2);
+    padding-right: calc(var(--grid-gutter-x) / 2);
+}
+
+// container
+.container-fluid {
+    --grid-gutter-x: #{$grid-gutter-width};
+    --grid-gutter-y: 0;
+
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @extend %gutter-padding;
+}
+
+.container {
+    @extend .container-fluid;
+}
+
+// row
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--grid-gutter-y) * -1);
+    margin-left: calc(var(--grid-gutter-x) / 2 * -1);
+    margin-right: calc(var(--grid-gutter-x) / 2 * -1);
+
+    &[class*="row-cols-"] > *,
+    [class*="col-"] {
+        flex: 0 0 auto;
+        @extend %gutter-padding;
+    }
+
+    > * {
+        margin-top: var(--grid-gutter-y);
+    }
+}
+
+// col
+.col {
+    flex: 1 0;
+    // tạo gutter bằng padding trái phải
+    @extend %gutter-padding;
+}
+
+// mixin Reponsive web design
+@mixin make-media-query($dismension, $bypass: false) {
+    @if ($bypass) {
+        @content;
+    } @else {
+        @media (min-width: $dismension) {
+            @content;
+        }
+    }
+}
+
+// row cols
+@mixin make-row-cols($infix) {
+    @for $i from 1 through $grid-columns {
+        .row-cols#{$infix}-#{$i} > * {
+            width: math.div(100%, $i);
+        }
+    }
+}
+
+// col
+@mixin make-columns($infix) {
+    @for $i from 1 through $grid-columns {
+        .col#{$infix}-#{$i} {
+            width: math.div(100%, $grid-columns) * $i;
+        }
+    }
+}
+
+// offset
+@mixin make-offset($infix) {
+    @for $i from 0 to $grid-columns {
+        .offset#{$infix}-#{$i} {
+            margin-left: if($i > 0, math.div(100%, $grid-columns) * $i, 0);
+        }
+    }
+}
+
+@mixin make-gutters($infix) {
+    @each $i, $ratio in $gutters {
+        .g#{$infix}-#{$i},
+        .gx#{$infix}-#{$i} {
+            --grid-gutter-x: #{$grid-gutter-width * $ratio};
+        }
+
+        .g#{$infix}-#{$i},
+        .gy#{$infix}-#{$i} {
+            --grid-gutter-y: #{$grid-gutter-width * $ratio};
+        }
+    }
+}
+
+// lặp qua map grid-breakpoints và include các mixin
+@each $breakpoints, $dismension in $grid-breakpoints {
+    $is-xs: $breakpoints == xs;
+    $max-width: map-get($container-max-widths, $breakpoints);
+    $infix: if($is-xs, "", -$breakpoints);
+    @include make-media-query($dismension, $is-xs) {
+        .container {
+            max-width: $max-width;
+        }
+        @include make-row-cols($infix);
+        @include make-columns($infix);
+        @include make-offset($infix);
+        @include make-gutters($infix);
+    }
+}

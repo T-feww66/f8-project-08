@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 html {
     font-size: 62.5%;
 }
@@ -11,5 +13,26 @@ html {
 body {
     font-size: 1.6rem;
     font-family: Gordita, sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-bg);
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    color: inherit;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.icon {
+    filter: var(--color-icon);
+}
