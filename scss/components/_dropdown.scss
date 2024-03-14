@@ -1,0 +1,127 @@
+.drop-down {
+    position: absolute;
+    left: 0;
+    padding-top: 54px;
+    width: min(1240px, 100%);
+    display: none;
+
+    &__inner {
+        --inner-padding: 30px;
+        position: relative;
+        padding: var(--inner-padding);
+        border-radius: 20px;
+        background: var(--dropdown-bg);
+        box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-bg);
+
+        &::before {
+            content: url(../icons/dropdown-arrow.svg);
+            filter: var(--dropdown-arrow);
+            position: absolute;
+            top: -14px;
+            left: var(--arrow-left-pos);
+            transform: translateX(50%);
+        }
+    }
+}
+
+// top-menu
+
+.top-menu {
+    --max-height-top-menu: calc(min(582px, 100vh - 134px) - var(--inner-padding) * 2);
+    position: relative;
+    height: var(--max-height-top-menu);
+    &__main {
+        width: 292px;
+        height: inherit;
+        border-right: 1px solid var(--top-menu-border-color);
+        overflow-y: auto;
+    }
+}
+
+// submenu
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 292px;
+    padding-left: 30px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    overflow-y: auto;
+
+    &__not-main {
+        height: var(--max-height-top-menu);
+        position: initial;
+        inset: initial;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.menu-column {
+    display: flex;
+    column-gap: 14px;
+    & + .menu-column {
+        margin-top: 22px;
+    }
+
+    &__icon {
+        position: relative;
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+
+        &-icon-1 {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+        &-icon-2 {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            filter: var(--menu-icon-color);
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__heading {
+        margin-top: 6px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__list {
+        margin-top: 19px;
+    }
+
+    &__item {
+        &--active .sub-menu {
+            display: grid;
+        }
+
+        &--active > .menu-column__link,
+        &:hover > .menu-column__link {
+            color: #0071dc;
+            font-weight: 500;
+        }
+    }
+
+    &__item:hover .sub-menu {
+        display: grid;
+    }
+
+    &__link {
+        display: block;
+        padding: 7px 0;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+}

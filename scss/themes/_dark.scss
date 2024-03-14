@@ -6,7 +6,20 @@ html.dark {
         saturate(7427%) hue-rotate(23deg) brightness(118%) contrast(118%);
     --body-bg: #292e39;
     --header-bg: #171c28;
+    --header-shadow: rgba(0, 0, 0, 0.2);
     --top-act-group-bg: #292e39;
     --top-act-group-shadow: rgba(0, 0, 0, 0.2);
     --top-act-separate: #ededf6;
+
+    // drop down
+    --dropdown-bg: #242f3c;
+    --dropdown-shadow-bg: rgba(23, 28, 40, 0.4);
+    --dropdown-arrow: brightness(0) saturate(100%) invert(17%) sepia(12%)
+        saturate(1228%) hue-rotate(172deg) brightness(94%) contrast(96%);
+
+    // top menu
+    --top-menu-border-color: #171c28;
+
+    --menu-icon-color: brightness(0) saturate(100%) invert(95%) sepia(1%)
+        saturate(349%) hue-rotate(201deg) brightness(103%) contrast(98%);
 }
