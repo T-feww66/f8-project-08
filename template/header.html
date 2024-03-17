@@ -2,7 +2,12 @@
     <div class="top-bar">
         <!-- More -->
         <button class="top-bar__more">
-            <img src="./assets/icons/more.svg" alt="" class="top-bar__more-icon icon" />
+            <img
+                src="./assets/icons/more.svg"
+                alt=""
+                class="top-bar__more-icon icon js-toggle"
+                toggle-target="#navbar"
+            />
         </button>
         <!-- Logo -->
         <a href="./" class="logo">
@@ -11,7 +16,11 @@
         </a>
 
         <!-- NavBar -->
-        <nav class="navbar">
+        <nav id="navbar" class="navbar hide">
+            <button class="navbar__back js-toggle" toggle-target="#navbar">
+                <img src="./assets/icons/arrow-left.svg" alt="" />
+            </button>
+
             <ul class="navbar__list js-dropdown-list">
                 <li class="navbar__item">
                     <a href="#!" class="navbar__link">
@@ -5346,6 +5355,8 @@
             </ul>
         </nav>
 
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+
         <!-- Actions -->
         <div class="top-act">
             <div class="top-act__group top-act__group-single">
@@ -5361,7 +5372,7 @@
                 </button>
                 <div class="top-act__separate"></div>
                 <button class="top-act__btn">
-                    <img src="./assets/icons/buy.svg" alt="" class="top-act__icon icon" />
+                    <img src="./assets/img/buy.svg" alt="" class="top-act__icon icon" />
                     <span class="top-act__title">$65.42</span>
                 </button>
             </div>

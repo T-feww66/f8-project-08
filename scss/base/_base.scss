@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 html {
     font-size: 62.5%;
 }
@@ -22,6 +20,8 @@ a {
     text-decoration: none;
 }
 
+a,
+img,
 button,
 input,
 textarea,
@@ -31,6 +31,7 @@ select {
     outline: none;
     border: none;
     background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .icon {
