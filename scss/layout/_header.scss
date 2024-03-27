@@ -16,14 +16,6 @@
     @extend %flexItemCenter;
     justify-content: space-between;
     position: relative;
-
-    &__more {
-        display: none;
-
-        @include abstracts.breakpoint(lg) {
-            display: block;
-        }
-    }
 }
 
 // Navbar
@@ -63,9 +55,12 @@
         height: 50px;
 
         @include abstracts.breakpoint(lg) {
+            padding-bottom: 20px;
             gap: 30px;
             flex-direction: column;
             align-items: flex-start;
+            height: calc(100% - 39px);
+            overflow-y: auto;
         }
     }
 
@@ -99,7 +94,18 @@
         @include abstracts.breakpoint(lg) {
             padding: 0px;
             width: 100%;
+            &:hover .drop-down {
+                display: none;
+            }
+
+            &--active .drop-down {
+                display: block !important;
+            }
         }
+    }
+
+    &__item--active &__icon {
+        rotate: 0deg;
     }
 
     &__link {
@@ -119,6 +125,9 @@
 
     &__icon {
         margin-top: 3px;
+        @include abstracts.breakpoint(lg) {
+            rotate: -90deg;
+        }
     }
 }
 
@@ -134,10 +143,6 @@
         background: var(--top-act-group-bg);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
         border-radius: 8px;
-
-        @include abstracts.breakpoint(sm) {
-            display: none;
-        }
     }
 
     &__group-single {

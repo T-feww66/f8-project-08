@@ -1,3 +1,4 @@
+@use "../abstracts";
 .drop-down {
     position: absolute;
     left: 0;
@@ -5,6 +6,10 @@
     width: min(1240px, 100%);
     display: none;
 
+    @include abstracts.breakpoint(lg) {
+        padding-top: 0;
+        position: initial;
+    }
     &__inner {
         --inner-padding: 30px;
         position: relative;
@@ -13,6 +18,13 @@
         background: var(--dropdown-bg);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-bg);
 
+        @include abstracts.breakpoint(lg) {
+            padding: 0;
+            border-radius: none;
+            background: transparent;
+            box-shadow: none;
+        }
+
         &::before {
             content: url(../icons/dropdown-arrow.svg);
             filter: var(--dropdown-arrow);
@@ -20,6 +32,9 @@
             top: -14px;
             left: var(--arrow-left-pos);
             transform: translateX(50%);
+            @include abstracts.breakpoint(lg) {
+                content: none;
+            }
         }
     }
 }
@@ -30,11 +45,20 @@
     --max-height-top-menu: calc(min(582px, 100vh - 134px) - var(--inner-padding) * 2);
     position: relative;
     height: var(--max-height-top-menu);
+    @include abstracts.breakpoint(lg) {
+        height: auto;
+    }
     &__main {
         width: 292px;
         height: inherit;
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
+
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
@@ -47,6 +71,11 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     overflow-y: auto;
+    @include abstracts.breakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
 
     &__not-main {
         height: var(--max-height-top-menu);
@@ -55,12 +84,21 @@
         padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }
 
 .menu-column {
     display: flex;
     column-gap: 14px;
+
+    @include abstracts.breakpoint(lg) {
+        margin-top: 10px;
+    }
+
     & + .menu-column {
         margin-top: 22px;
     }
@@ -96,10 +134,16 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
+        @include abstracts.breakpoint(lg) {
+            margin-bottom: 15px;
+        }
     }
 
     &__list {
         margin-top: 19px;
+        @include abstracts.breakpoint(lg) {
+            margin-top: 10px;
+        }
     }
 
     &__item {

@@ -13,7 +13,7 @@ $display-values: none, flex, grid, block;
 
     @each $display in $display-values {
         .d#{$infix}-#{$display} {
-            display: #{$display}
+            display: #{$display} !important;
         }
     }
 }
