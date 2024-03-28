@@ -21,11 +21,12 @@
 // Navbar
 .navbar {
     @include abstracts.breakpoint(lg) {
+        border-radius: 0px 20px 20px 0px;
+        background-color: var(--sidebar-bg);
         position: fixed;
         z-index: 9;
         inset: 0 50% 0 0;
-        padding: 20px 40px;
-        background-color: #fff;
+        padding: 20px 0;
         transition: translate ease 0.4s;
 
         &.hide {
@@ -34,6 +35,7 @@
 
         &.show {
             translate: 0;
+            box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
 
             & ~ .navbar__overlay {
                 opacity: 1;
@@ -42,25 +44,51 @@
         }
     }
 
+    @include abstracts.breakpoint(md) {
+        inset: 0 20% 0 0;
+        padding: 20px 0;
+    }
+
+    @include abstracts.breakpoint(sm) {
+        padding: 20px 0;
+    }
+
     &__back {
         display: none;
         padding: 0 0 30px;
         @include abstracts.breakpoint(lg) {
+            padding: 0 40px 30px;
             display: block;
+        }
+
+        @include abstracts.breakpoint(md) {
+            padding: 0 30px 30px;
+        }
+
+        @include abstracts.breakpoint(sm) {
+            padding: 0 20px 20px;
         }
     }
 
     &__list {
         @extend %flexItemCenter;
         height: 50px;
-
         @include abstracts.breakpoint(lg) {
-            padding-bottom: 20px;
+            padding: 0 40px 30px;
             gap: 30px;
             flex-direction: column;
             align-items: flex-start;
             height: calc(100% - 39px);
             overflow-y: auto;
+        }
+
+        @include abstracts.breakpoint(md) {
+            padding: 0 30px 30px;
+        }
+
+        @include abstracts.breakpoint(sm) {
+            padding: 10px 20px 20px;
+            height: calc(100% - 114px);
         }
     }
 
@@ -185,5 +213,25 @@
         object-fit: cover;
         border-radius: 8px;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+    }
+}
+
+// nav btn
+.nav-btn {
+    align-items: center;
+    padding: 10px 20px;
+    &__title,
+    &__qnt {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+
+    &__title {
+        margin-left: 16px;
+    }
+
+    &__qnt {
+        margin-left: auto;
     }
 }
