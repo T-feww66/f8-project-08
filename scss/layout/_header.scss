@@ -16,6 +16,7 @@
     @extend %flexItemCenter;
     justify-content: space-between;
     position: relative;
+    z-index: 3;
 }
 
 // Navbar
@@ -80,6 +81,7 @@
             align-items: flex-start;
             height: calc(100% - 39px);
             overflow-y: auto;
+            overscroll-behavior: contain;
         }
 
         @include abstracts.breakpoint(md) {

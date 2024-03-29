@@ -1361,6 +1361,7 @@ html {
 .top-bar {
   justify-content: space-between;
   position: relative;
+  z-index: 3;
 }
 
 @media (max-width: 991.98px) {
@@ -1427,6 +1428,7 @@ html {
     align-items: flex-start;
     height: calc(100% - 39px);
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 }
 @media (max-width: 767.98px) {
@@ -1751,6 +1753,98 @@ html {
   padding: 7px 0;
   font-size: 1.4rem;
   line-height: 142.857%;
+}
+
+.slider {
+  --slider-bg: #fff;
+  position: relative;
+  margin: 40px 0;
+}
+@media (max-width: 767.98px) {
+  .slider {
+    margin: 30px 0;
+  }
+}
+.slider__inner {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.slider__item {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  padding-top: 34%;
+}
+@media (max-width: 767.98px) {
+  .slider__item {
+    padding-top: 50%;
+  }
+}
+.slider__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.slider__page {
+  position: absolute;
+  width: 12.5%;
+  bottom: 14.4%;
+  left: 5.1%;
+  display: flex;
+  align-items: center;
+  column-gap: 22px;
+}
+.slider__page-num {
+  color: var(--slider-bg);
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .slider__page-num {
+    font-size: 1.4rem;
+  }
+}
+.slider__page-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  flex-shrink: 0;
+  background-color: var(--slider-bg);
+}
+@media (max-width: 767.98px) {
+  .slider__page-item {
+    height: 3px;
+  }
+}
+.slider__page-item::after, .slider__page-item::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 4px solid var(--slider-bg);
+  border-radius: 50%;
+}
+@media (max-width: 767.98px) {
+  .slider__page-item::after, .slider__page-item::before {
+    border-width: 3px;
+  }
+}
+.slider__page-item::after {
+  right: 0;
+  top: 50%;
+  translate: 90% -50%;
+}
+.slider__page-item::before {
+  left: 0;
+  top: 50%;
+  translate: -90% -50%;
 }
 
 /*# sourceMappingURL=main.css.map */
