@@ -105,6 +105,7 @@ $gutters: (
 }
 
 // offset
+//infix null để breakpoint không có lg, md , xl, xxl vẫn sữ dụng được
 @mixin make-offset($infix: null) {
     @for $i from 0 to $grid-columns {
         .offset#{$infix}-#{$i} {
@@ -127,6 +128,7 @@ $gutters: (
     }
 }
 
+// các mixin không tham số và infix không có
 @include make-row-cols();
 @include make-columns();
 @include make-offset();

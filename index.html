@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <!-- dark -->
     <head>
         <meta charset="UTF-8" />
@@ -30,42 +30,99 @@
         <script>
             load("#header", "./template/header.html");
         </script>
-        <div class="container">
+        <div class="container home">
             <!-- Main -->
-
-            <!-- SlideShow -->
-            <section class="slider">
-                <div class="slider__inner">
-                    <div class="slider__item">
-                        <a href="#!" class="slider__link">
-                            <picture>
-                                <source
-                                    media="(max-width: 767.98px)"
-                                    srcset="./assets/img/slidershow/slider-01-md.png"
-                                />
+            <section class="home__container">
+                <!-- SlideShow -->
+                <section class="slider">
+                    <div class="slider__inner">
+                        <div class="slider__item">
+                            <a href="#!" class="slider__link">
+                                <picture>
+                                    <source
+                                        media="(max-width: 767.98px)"
+                                        srcset="./assets/img/slidershow/slider-01-md.png"
+                                    />
+                                    <img src="./assets/img/slidershow/slider-01.png" alt="" class="slider__img" />
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="slider__item">
+                            <a href="#!" class="slider__link">
                                 <img src="./assets/img/slidershow/slider-01.png" alt="" class="slider__img" />
-                            </picture>
-                        </a>
-                    </div>
-                    <div class="slider__item">
-                        <a href="#!" class="slider__link">
-                            <img src="./assets/img/slidershow/slider-01.png" alt="" class="slider__img" />
-                        </a>
+                            </a>
+                        </div>
+
+                        <div class="slider__item">
+                            <a href="#!" class="slider__link">
+                                <img src="./assets/img/slidershow/slider-01.png" alt="" class="slider__img" />
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="slider__item">
-                        <a href="#!" class="slider__link">
-                            <img src="./assets/img/slidershow/slider-01.png" alt="" class="slider__img" />
-                        </a>
+                    <div class="slider__page">
+                        <span class="slider__page-num">1</span>
+                        <span class="slider__page-item"></span>
+                        <span class="slider__page-num">5</span>
                     </div>
-                </div>
+                </section>
+            </section>
 
-                <div class="slider__page">
-                    <span class="slider__page-num">1</span>
-                    <span class="slider__page-item"></span>
-                    <span class="slider__page-num">5</span>
+            <!-- Browse Categories -->
+            <section class="home__container">
+                <h2 class="home__heading">Browse Categories</h2>
+                <!-- List categories  -->
+                <div class="home__cate row row-cols-3 row-cols-md-1">
+                    <!-- categories item 1 -->
+                    <div class="col">
+                        <article class="cate-item">
+                            <a href="#!"
+                                ><img src="./assets/img/category-item/product-1.png" alt="" class="cate-item__thumb" />
+                            </a>
+                            <section class="cate-item__info">
+                                <h3>
+                                    <a href="#!" class="cate-item__title">$24 - $150</a>
+                                </h3>
+                                <p class="cate-item__desc">New sumatra mandeling coffe blend</p>
+                            </section>
+                        </article>
+                    </div>
+
+                    <!-- categories item  2-->
+
+                    <div class="col">
+                        <article class="cate-item">
+                            <a href="#!"
+                                ><img src="./assets/img/category-item/product-2.png" alt="" class="cate-item__thumb" />
+                            </a>
+                            <section class="cate-item__info">
+                                <h3>
+                                    <a href="#!" class="cate-item__title">$37 - $160</a>
+                                </h3>
+                                <p class="cate-item__desc">Espresso arabica and robusta beans</p>
+                            </section>
+                        </article>
+                    </div>
+
+                    <!-- categories item 3 -->
+                    <div class="col">
+                        <article class="cate-item">
+                            <a href="#!"
+                                ><img src="./assets/img/category-item/product-3.png" alt="" class="cate-item__thumb" />
+                            </a>
+                            <section class="cate-item__info">
+                                <h3>
+                                    <a href="#!" class="cate-item__title">$32 - $160</a>
+                                </h3>
+                                <p class="cate-item__desc">Lavazza top class whole bean coffee blend</p>
+                            </section>
+                        </article>
+                    </div>
                 </div>
             </section>
+
+            <!-- Browse Products -->
+            <section class="home__container"></section>
             <!-- Footer -->
             <footer id="footer"></footer>
             <script>

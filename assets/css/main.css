@@ -1324,6 +1324,9 @@ html.dark {
       brightness(103%) contrast(98%);
   --sidebar-shadow: rgba(23, 28, 40, 0.4);
   --sidebar-bg: #292e39;
+  --cate-item-bg: #171c28;
+  --cate-item-thumb-bg: #292e39;
+  --cate-item-title: #fff;
 }
 
 html {
@@ -1341,10 +1344,18 @@ html {
   --top-menu-border-color: #d2d1d6;
   --sidebar-shadow: rgba(200, 200, 200, 0.4);
   --sidebar-bg: #fff;
+  --cate-item-bg: #eee;
+  --cate-item-thumb-bg: #fff;
+  --cate-item-title: #000;
 }
 @media (max-width: 1199.98px) {
   html {
     --header-bg: #fff;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    --cate-item-bg: #fff;
   }
 }
 
@@ -1762,12 +1773,6 @@ html {
 .slider {
   --slider-bg: #fff;
   position: relative;
-  margin: 40px 0;
-}
-@media (max-width: 767.98px) {
-  .slider {
-    margin: 30px 0;
-  }
 }
 .slider__inner {
   display: flex;
@@ -1849,6 +1854,95 @@ html {
   left: 0;
   top: 50%;
   translate: -90% -50%;
+}
+
+.cate-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 16px;
+  height: 100%;
+  background: var(--cate-item-bg);
+  gap: 20px;
+}
+@media (max-width: 1199.98px) {
+  .cate-item {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767.98px) {
+  .cate-item {
+    flex-direction: row;
+  }
+}
+.cate-item__thumb {
+  width: 116px;
+  height: 116px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--cate-item-thumb-bg);
+}
+@media (max-width: 1199.98px) {
+  .cate-item__thumb {
+    width: 100%;
+    height: 150px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cate-item__thumb {
+    width: 88px;
+    height: 88px;
+  }
+}
+.cate-item__title {
+  color: var(--cate-item-title);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 145.455%;
+}
+@media (max-width: 767.98px) {
+  .cate-item__title {
+    font-size: 1.8rem;
+  }
+}
+.cate-item__desc {
+  margin-top: 6px;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+@media (max-width: 767.98px) {
+  .cate-item__desc {
+    font-size: 1.4rem;
+  }
+}
+
+.home__container {
+  margin-top: 40px;
+}
+@media (max-width: 767.98px) {
+  .home__container {
+    margin-top: 30px;
+  }
+}
+.home__heading {
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 142.667%;
+}
+@media (max-width: 767.98px) {
+  .home__heading {
+    font-size: 2.2rem;
+  }
+}
+.home__cate {
+  --grid-gutter-x: 51px;
+  --grid-gutter-y: 20px;
+}
+@media (max-width: 991.98px) {
+  .home__cate {
+    --grid-gutter-x: 24px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
