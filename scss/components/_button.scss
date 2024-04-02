@@ -1,0 +1,37 @@
+.fillter-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 6px 12px;
+    color: var(--fillter-btn-color);
+    background-color: var(--fillter-btn-bg);
+    border-radius: 6px;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 142.857%;
+}
+
+.like-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--like-btn-bg);
+    box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &:not(&__liked) &__icon--liked {
+        display: none;
+    }
+
+    &__liked &__icon {
+        display: none;
+    }
+
+    &__icon--liked {
+        margin-top: 6px;
+    }
+}

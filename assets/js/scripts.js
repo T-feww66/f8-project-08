@@ -180,3 +180,14 @@ window.addEventListener("template-loaded", () => {
         };
     });
 });
+
+// toggle click product like
+window.addEventListener("template-loaded", () => {
+    const likeProducts = $$(".like-btn");
+
+    likeProducts.forEach((item) => {
+        item.onclick = () => {
+            item.classList.toggle("like-btn__liked");
+        };
+    });
+});
