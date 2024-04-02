@@ -6,7 +6,7 @@
     width: min(1240px, 100%);
     display: none;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         padding-top: 0;
         position: initial;
     }
@@ -18,7 +18,7 @@
         background: var(--dropdown-bg);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-bg);
 
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             padding: 0;
             border-radius: none;
             background: transparent;
@@ -32,7 +32,7 @@
             top: -14px;
             left: var(--arrow-left-pos);
             transform: translateX(50%);
-            @include abstracts.breakpoint(lg) {
+            @include abstracts.screen(lg) {
                 content: none;
             }
         }
@@ -45,7 +45,7 @@
     --max-height-top-menu: calc(min(582px, 100vh - 134px) - var(--inner-padding) * 2);
     position: relative;
     height: var(--max-height-top-menu);
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         height: auto;
     }
     &__main {
@@ -54,7 +54,7 @@
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
 
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             width: 100%;
             height: auto;
             border-right: none;
@@ -71,7 +71,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     overflow-y: auto;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         position: initial;
         grid-template-columns: 1fr;
         padding-left: 0;
@@ -84,7 +84,7 @@
         padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             grid-template-columns: 1fr;
             height: auto;
         }
@@ -95,7 +95,7 @@
     display: flex;
     column-gap: 14px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         margin-top: 10px;
     }
 
@@ -134,14 +134,14 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             margin-bottom: 15px;
         }
     }
 
     &__list {
         margin-top: 19px;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             margin-top: 10px;
         }
     }

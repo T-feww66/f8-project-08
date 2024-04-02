@@ -12,13 +12,13 @@
     }
 
     &__img {
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             width: 24px;
         }
     }
 
     &__title {
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             font-size: 1.8rem;
         }
     }

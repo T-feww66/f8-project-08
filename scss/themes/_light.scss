@@ -11,7 +11,7 @@ html {
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
     --top-act-separate: #ededf6;
 
-    @include abstracts.breakpoint(xl) {
+    @include abstracts.screen(xl) {
         --header-bg: #fff;
     }
 
