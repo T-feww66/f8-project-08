@@ -123,12 +123,13 @@
                 <div class="home__row">
                     <h2 class="home__heading">Total LavAzza 1320</h2>
                     <div class="filter-wrap">
-                        <button class="filter-btn">
+                        <button class="filter-btn js-toggle" toggle-target="#home__filter">
                             Filter
                             <img src="./assets/icons/fillter.svg" alt="" class="icon filter-btn__icon" />
                         </button>
 
-                        <div class="filter">
+                        <div class="filter hide" id="home__filter">
+                            <img src="./assets/icons/arrow-up.png" alt="" class="filter-icon" />
                             <h3 class="filter__heading">Filter</h3>
                             <form action="" class="filter__form">
                                 <div class="filter__row">
@@ -146,14 +147,30 @@
                                                 <label for="" class="filter__form-label filter__form-label--small"
                                                     >Minimum</label
                                                 >
-                                                <input type="text" value="$30.00" class="filter__form-input" />
+                                                <div class="filter__form-text-input filter__form-text-input-small">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        id=""
+                                                        class="filter__form-input"
+                                                        value="$30.00"
+                                                    />
+                                                </div>
                                             </div>
 
                                             <div>
                                                 <label for="" class="filter__form-label filter__form-label--small"
                                                     >Maximum</label
                                                 >
-                                                <input type="text" value="$100.00" class="filter__form-input" />
+                                                <div class="filter__form-text-input filter__form-text-input-small">
+                                                    <input
+                                                        type="text"
+                                                        name=""
+                                                        id=""
+                                                        class="filter__form-input"
+                                                        value="$100.00"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -197,7 +214,43 @@
                                     <div class="filter__separate"></div>
 
                                     <!-- Filter colums 3 -->
-                                    <div class="filter__col"></div>
+                                    <div class="filter__col">
+                                        <label for="" class="filter__form-label">Brand</label>
+                                        <div class="filter__form-group">
+                                            <div class="filter__form-text-input">
+                                                <input
+                                                    type="text"
+                                                    name=""
+                                                    id=""
+                                                    placeholder="Search brand name"
+                                                    class="filter__form-input"
+                                                />
+                                                <img
+                                                    src="./assets/icons/search.svg"
+                                                    alt=""
+                                                    class="filter__form-input-icon"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="filter__form-group">
+                                            <div class="filter__form-tags">
+                                                <button class="filter__form-tag">Lavazza</button>
+                                                <button class="filter__form-tag">Nescafe</button>
+                                                <button class="filter__form-tag">Starbucks</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter__row filter__footer">
+                                    <button
+                                        class="btn btn--text filter__cancel js-toggle"
+                                        toggle-target="#home__filter"
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button class="btn btn--primary filter__submit">Show Result</button>
                                 </div>
                             </form>
                         </div>
