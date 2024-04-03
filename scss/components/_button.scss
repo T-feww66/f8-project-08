@@ -1,4 +1,4 @@
-.fillter-btn {
+.filter-btn {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -22,6 +22,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+
+    cursor: pointer;
 
     &:not(&__liked) &__icon--liked {
         display: none;

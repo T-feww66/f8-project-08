@@ -30,12 +30,12 @@ button,
 input,
 textarea,
 select {
-    color: inherit;
     font-family: inherit;
     outline: none;
     border: none;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
 
 .icon {
