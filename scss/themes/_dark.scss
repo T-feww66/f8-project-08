@@ -6,6 +6,7 @@ html.dark {
         contrast(118%);
     --body-bg: #292e39;
     --header-bg: #171c28;
+    --footer-bg: var(--header-bg);
     --header-shadow: rgba(0, 0, 0, 0.2);
     --top-act-group-bg: #292e39;
     --top-act-group-shadow: rgba(0, 0, 0, 0.2);
@@ -42,6 +43,8 @@ html.dark {
 
     // like btn
     --like-btn-bg: #292e39;
+    --footer-icon: var(--like-btn-bg);
+
 
     // filter
     --filter-bg: var(--dropdown-bg);

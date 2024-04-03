@@ -1,0 +1,111 @@
+@use "../abstracts";
+.footer {
+    margin-top: 40px;
+
+    &__inner {
+        padding: 50px 50px 30px;
+        background-color: var(--footer-bg);
+
+        @include abstracts.screen(md) {
+            padding: 30px;
+        }
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1.2fr 1.2fr 1fr 1.2fr;
+        gap: 50px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #9e9da8;
+
+        @include abstracts.screen(lg) {
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @include abstracts.screen(md) {
+            grid-template-columns: 1fr;
+        }
+
+        @include abstracts.screen(sm) {
+            gap: 20px;
+        }
+    }
+
+    &__socials {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: var(--footer-icon);
+        box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+        transition: 0.25s;
+
+        font-size: 2.2rem;
+        &:hover {
+            cursor: pointer;
+            scale: 1.2;
+        }
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 145.455%;
+    }
+
+    &__list {
+        margin-top: 13px;
+    }
+
+    &__desc {
+        margin-top: 20px;
+    }
+
+    &__copywrite,
+    &__desc,
+    &__link {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 150%;
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 0;
+
+        &-icon {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__copywrite-wrap {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        @include abstracts.screen(md) {
+            row-gap: 10px;
+        }
+    }
+}

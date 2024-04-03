@@ -173,6 +173,7 @@
         background: var(--top-act-group-bg);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
         border-radius: 8px;
+        overflow: hidden;
     }
 
     &__group-single {

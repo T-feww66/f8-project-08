@@ -6,6 +6,7 @@ html {
         contrast(92%);
     --body-bg: #f6f6f6;
     --header-bg: #eee;
+    --footer-bg: var(--header-bg);
     --header-shadow: rgba(237, 237, 246, 0.2);
     --top-act-group-bg: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
@@ -45,6 +46,7 @@ html {
 
     // like btn
     --like-btn-bg: #fff;
+    --footer-icon: var(--like-btn-bg);
 
     // filter
     --filter-bg: #fff;
