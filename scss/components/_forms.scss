@@ -1,0 +1,81 @@
+@use "../abstracts";
+
+.form {
+    &__group {
+        margin-top: 30px;
+        @include abstracts.screen(sm) {
+            margin-top: 20px;
+        }
+
+        &-inline {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__text-input {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+        height: 50px;
+        padding: 0 12px;
+
+        &:focus-within {
+            border-color: #77dae6;
+        }
+    }
+
+    &__input {
+        height: 100%;
+        flex: 1;
+
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+
+        @include abstracts.screen(sm) {
+            font-size: 1.6rem;
+        }
+
+        &::placeholder {
+            color: #d2d1d6;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-label {
+            color: #9e9da8;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 146.667%;
+        @include abstracts.screen(sm) {
+            font-size: 1.4rem;
+
+        }
+        }
+    }
+
+    &__pull--right {
+        margin-left: auto;
+    }
+
+    &__group.invalid &__text-input {
+        border-color: #f33a58;
+    }
+    
+    &__group.invalid &__message {
+        color: #f33a58;
+    }
+    
+    &__message {
+        float: left;
+        font-size: 1.4rem;
+        padding: 4px 0 0;
+    }
+}

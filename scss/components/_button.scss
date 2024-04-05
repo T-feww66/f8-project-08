@@ -41,6 +41,10 @@
 // button
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     height: 46px;
     padding: 0 20px;
     background-color: #9e9da8;
@@ -49,7 +53,9 @@
     border-radius: 6px;
 
     + .btn {
-        margin-left: 20px;
+        &:not(.btn-not-margin) {
+            margin-left: 20px;
+        }
     }
 
     &--text {
@@ -61,7 +67,7 @@
 
     &--primary {
         background-color: #ffb700;
-        color: #1A162E;
+        color: #1a162e;
     }
 
     &--outline {

@@ -17,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/T-feww66/f8-project-08/issues"
     },
-    "homepage": "https://github.com/T-feww66/f8-project-08#readme"
+    "homepage": "https://github.com/T-feww66/f8-project-08#readme",
+    "dependencies": {
+        "boxicons": "^2.1.4"
+    }
 }

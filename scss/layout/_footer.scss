@@ -46,9 +46,35 @@
         border-radius: 50%;
         width: 40px;
         height: 40px;
-        background-color: var(--footer-icon);
-        box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
         transition: 0.25s;
+        @include abstracts.screen(md) {
+            width: 48px;
+            height: 48px;
+        }
+
+        &-wrap {
+            border-radius: 50%;
+        }
+
+        &-wrap:nth-child(1) {
+            background-color: #686add;
+            color: #fff;
+        }
+
+        &-wrap:nth-child(2) {
+            background-color: #50a8d4;
+            color: #fff;
+        }
+
+        &-wrap:nth-child(3) {
+            background-color: #ed8fe7;
+            color: #fff;
+        }
+
+        &-wrap:nth-child(4) {
+            background-color: #fa7338;
+            color: #fff;
+        }
 
         font-size: 2.2rem;
         &:hover {
@@ -98,7 +124,7 @@
     }
 
     &__copywrite-wrap {
-        padding: 10px;
+        padding: 10px 0;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
