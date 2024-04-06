@@ -17,6 +17,24 @@
     justify-content: space-between;
     position: relative;
     z-index: 3;
+
+    &__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &__img {
+        @include abstracts.screen(lg) {
+            width: 24px;
+        }
+    }
+    &__title {
+        @include abstracts.screen(lg) {
+            font-size: 1.8rem;
+        }
+    }
 }
 
 // Navbar
@@ -222,7 +240,6 @@
         height: 36px !important;
         font-size: 1.4rem !important;
         padding: 0 10px !important;
-
     }
 }
 

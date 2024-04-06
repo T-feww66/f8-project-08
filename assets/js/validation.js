@@ -90,9 +90,11 @@ function Validator(formSelector, option = {}) {
                 var formGroup = getParent(e.target, ".form__group");
                 if (formGroup) {
                     var formMessage = formGroup.querySelector(".form__message");
+                    var formIcon = formGroup.querySelector(".form__icon");
                     formGroup.classList.add("invalid");
                     if (formMessage) {
                         formMessage.innerText = errorMessage;
+                        formIcon.src = "./assets/img/auth/iconmessage.svg";
                     }
                 }
             }
@@ -107,8 +109,10 @@ function Validator(formSelector, option = {}) {
             if (formGroup.classList.contains("invalid")) {
                 formGroup.classList.remove("invalid");
                 var formMessage = formGroup.querySelector(".form__message");
+                var formIcon = formGroup.querySelector(".form__icon");
                 if (formMessage) {
                     formMessage.innerText = "";
+                    formIcon.src = "./assets/img/auth/lock.svg";
                 }
             }
         }

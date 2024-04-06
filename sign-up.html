@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
             <div class="auth__intro">
                 <a href="./" class="logo auth__intro-sign-up d-none d-md-flex">
                     <img src="./assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
-                    <h2 class="logo__title">Cafegrocery</h2>
+                    <h2 class="logo__title">cafegrocery</h2>
                 </a>
                 <img src="./assets/img/auth/auth-intro.svg" alt="" class="auth__intro-img" />
                 <p class="auth__intro-text">
@@ -46,7 +46,7 @@
                 <div class="auth__content-inner">
                     <a href="./" class="logo auth__logo">
                         <img src="./assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
-                        <h2 class="logo__title">Cafegrocery</h2>
+                        <h2 class="logo__title">cafegrocery</h2>
                     </a>
                     <h1 class="auth__heading">Sign Up</h1>
                     <p class="auth__desc">Let’s create your account and Shop like a pro and save money.</p>
@@ -64,7 +64,7 @@
                                     class="form__input"
                                     required
                                 />
-                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon" />
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
                             </div>
                             <span class="form__message"></span>
                         </div>
@@ -79,7 +79,7 @@
                                     placeholder="Email"
                                     class="form__input"
                                 />
-                                <img src="./assets/img/auth/message.svg" alt="" class="form__input-icon" />
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
                             </div>
                             <span class="form__message"></span>
                         </div>
@@ -96,25 +96,25 @@
                                     class="form__input"
                                     required
                                 />
-                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon" />
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
                             </div>
                             <span class="form__message"></span>
                         </div>
 
                         <div class="form__group form__group-inline">
                             <label class="form__checkbox">
-                                <input type="checkbox" name="" id="" class="form__checkbox-input" required />
-                                <span class="form__checkbox-label form__pull--right">Set as default card</span>
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" checked required />
+                                <span class="form__checkbox-label">Set as default card</span>
                             </label>
 
                             <a href="#!" class="auth__link form__pull--right">Recovery Password</a>
                         </div>
 
                         <div class="form__group auth__btn-group">
-                            <button class="btn btn--primary auth__btn">Sign Up</button>
+                            <button class="btn btn--primary auth__btn form__submit-btn">Sign Up</button>
                             <a href="./index logined.html" class="btn btn--primary auth__btn btn-not-margin">Sign Up</a>
                             <button class="btn btn--outline btn-not-margin auth__btn">
-                                <img src="./assets/img/auth/google.svg" alt="" class="auth__btn-icon" />
+                                <img src="./assets/img/auth/google.svg" alt="" class="auth__btn-icon icon" />
                                 Sign in with Gmail
                             </button>
                         </div>
@@ -122,7 +122,7 @@
 
                     <p class="auth__text">
                         You have an account yet?
-                        <a href="./sign-in.html" class="auth__link">Sign In</a>
+                        <a href="./sign-in.html" class="auth__link auth__text-link">Sign In</a>
                     </p>
                 </div>
             </div>

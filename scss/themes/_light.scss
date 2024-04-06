@@ -53,5 +53,9 @@ html {
     --filter-form-tag: #f8f8fb;
 
     // Auth
-    --auth-content: #fff;
+    --auth-content-bg: #fff;
+    --auth-placeholder-color: #d2d1d6;
+    @include abstracts.screen(md) {
+        --auth-intro-bg: #fff;
+    }
 }

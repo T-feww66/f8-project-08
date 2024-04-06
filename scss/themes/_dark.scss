@@ -44,10 +44,16 @@ html.dark {
     // like btn
     --like-btn-bg: #292e39;
 
-
     // filter
     --filter-bg: var(--dropdown-bg);
     --filter-shadow: var(--dropdown-shadow-bg);
     --filter-form-tag: #171c28;
     --filter-form-icon: var(--dropdown-arrow);
+
+    // Auth
+    --auth-content-bg: #292e39;
+    --auth-intro-text: #b9babe;
+    --auth-heading-color: #b9babe;
+    --auth-placeholder-color: #b9babe;
+    --auth-intro-bg: #171c28;
 }

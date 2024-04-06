@@ -1,6 +1,11 @@
 @use "../abstracts";
 
 .form {
+
+    &:has(:invalid) &__submit-btn {
+        opacity: 0.4;
+        pointer-events: none;
+    }
     &__group {
         margin-top: 30px;
         @include abstracts.screen(sm) {
@@ -40,24 +45,53 @@
         }
 
         &::placeholder {
-            color: #d2d1d6;
+            color: var(--auth-placeholder-color);
         }
     }
 
     &__checkbox {
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 10px;
+        user-select: none;
+
+        &:has(:checked)::before {
+            background-color: #ffb700;
+            border-color: #ffb700;
+        }
+
+        &:has(:checked)::after {
+            left: 3px;
+            top: 7px;
+            width: 15px;
+            height: 5px;
+            border: 2px solid;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+        }
+
+        &::before {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid #9e9da8;
+        }
 
         &-label {
+            margin-left: 30px;
             color: #9e9da8;
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 146.667%;
-        @include abstracts.screen(sm) {
-            font-size: 1.4rem;
-
-        }
+            @include abstracts.screen(sm) {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -68,14 +102,19 @@
     &__group.invalid &__text-input {
         border-color: #f33a58;
     }
-    
+
     &__group.invalid &__message {
         color: #f33a58;
     }
-    
+
     &__message {
         float: left;
         font-size: 1.4rem;
         padding: 4px 0 0;
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
     }
 }
