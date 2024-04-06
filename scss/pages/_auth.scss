@@ -123,6 +123,10 @@
         @include abstracts.screen(md) {
             margin-top: 30px;
         }
+
+        &-forgot-password {
+            margin-top: 0;
+        }
     }
 
     &__link {
@@ -163,5 +167,9 @@
         &-link {
             font-size: inherit;
         }
+    }
+
+    &__message {
+        margin-top: 30px;
     }
 }

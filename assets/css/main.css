@@ -1426,11 +1426,13 @@ html {
   position: relative;
   z-index: 3;
 }
-.top-bar__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+@media (max-width: 767.98px) {
+  .top-bar__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
 }
 @media (max-width: 991.98px) {
   .top-bar__img {
@@ -2470,7 +2472,7 @@ html {
   }
 }
 
-.form:has(:invalid) .form__submit-btn {
+.form:has(:invalid) .form__submit-btn, .form:has(.invalid) .form__submit-btn {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -2571,6 +2573,19 @@ html {
 .form__icon {
   width: 16px;
   height: 16px;
+}
+
+.message {
+  display: none;
+  border-radius: 8px;
+  padding: 16px 12px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.message__success {
+  display: block;
+  background: rgba(69, 207, 161, 0.2);
+  border: 1px solid #20a679;
 }
 
 .home__container {
@@ -2728,6 +2743,9 @@ html {
     margin-top: 30px;
   }
 }
+.auth__form-forgot-password {
+  margin-top: 0;
+}
 .auth__link {
   color: #0071dc;
   font-size: 1.5rem;
@@ -2765,6 +2783,9 @@ html {
 }
 .auth__text-link {
   font-size: inherit;
+}
+.auth__message {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

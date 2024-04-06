@@ -2,7 +2,8 @@
 
 .form {
 
-    &:has(:invalid) &__submit-btn {
+    &:has(:invalid) &__submit-btn,
+    &:has(.invalid) &__submit-btn{
         opacity: 0.4;
         pointer-events: none;
     }

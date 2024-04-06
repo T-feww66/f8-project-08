@@ -18,19 +18,19 @@ function Validator(formSelector, option = {}) {
     // validator rules
     var validatorRules = {
         required: (value) => {
-            return value ? undefined : "Vui lòng nhập trường này";
+            return value ? undefined : " Please enter this field sign";
         },
         email: (value) => {
             var regex =
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return regex.test(value) ? undefined : "Email không hợp lệ";
+            return regex.test(value) ? undefined : "Invalid email";
         },
         min: (min) => {
-            return (value) => (value.length >= min ? undefined : `Vui lòng nhập it nhất ${min} ký tự`);
+            return (value) => (value.length >= min ? undefined : `Please enter on ${min} characters`);
         },
 
         max: (max) => {
-            return (value) => (value.length <= max ? undefined : `Vui lòng nhập tối thiểu ${max} ký tự`);
+            return (value) => (value.length <= max ? undefined : `Please enter at least ${max} characters`);
         },
     };
 
@@ -121,7 +121,7 @@ function Validator(formSelector, option = {}) {
     // xữ lý hành vi submit form
 
     formElement.onsubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         var inputs = formElement.querySelectorAll("input[name][rules]");
         var isValid = false;

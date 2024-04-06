@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +37,8 @@
                 </p>
 
                 <button class="auth__intro-next d-none d-md-block js-toggle" toggle-target="#auth-content">
-                    <img src="./assets/img/auth/auth-arrow.png" alt="" />
+                    <img src="./assets/img/auth/auth-arrow.svg" alt="" />
+
                 </button>
             </div>
 
@@ -54,7 +55,7 @@
                         information.
                     </p>
 
-                    <form id="form" action="" class="form auth__form">
+                    <form id="form" action="./index-logined.html" class="form auth__form">
                         <!-- Email -->
                         <div class="form__group">
                             <div class="form__text-input">
@@ -90,23 +91,15 @@
 
                         <div class="form__group form__group-inline">
                             <label class="form__checkbox">
-                                <input
-                                    type="checkbox"
-                                    name=""
-                                    id=""
-                                    class="form__checkbox-input d-none"
-                                    checked
-                                    required
-                                />
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" required />
                                 <span class="form__checkbox-label">Set as default card</span>
                             </label>
 
-                            <a href="#!" class="auth__link form__pull--right">Recovery Password</a>
+                            <a href="./forgot-password.html" class="auth__link form__pull--right">Forgot Password?</a>
                         </div>
 
                         <div class="form__group auth__btn-group">
                             <button class="btn btn--primary auth__btn form__submit-btn">Sign In</button>
-                            <a href="./index logined.html" class="btn btn--primary auth__btn btn-not-margin">Sign In</a>
                             <button class="btn btn--outline btn-not-margin auth__btn">
                                 <img src="./assets/img/auth/google.svg" alt="" class="auth__btn-icon icon" />
                                 Sign in with Gmail
@@ -115,7 +108,7 @@
                     </form>
 
                     <p class="auth__text">
-                        You have an account yet?
+                        You don't have an account yet?
                         <a href="./sign-up.html" class="auth__link auth__text-link">Sign up</a>
                     </p>
                 </div>
