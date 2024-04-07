@@ -201,3 +201,37 @@ window.addEventListener("template-loaded", () => {
         };
     });
 });
+
+// Onclick vo nut submit forgot password
+window.addEventListener("template-loaded", () => {
+    const submitPassword = document.querySelector(".auth__submit-forgot-password");
+    const message = document.querySelector(".message");
+    if (submitPassword) {
+        submitPassword.onclick = (e) => {
+            e.preventDefault();
+            if (message) {
+                message.classList.add("message__success");
+            }
+        };
+    }
+});
+
+window.addEventListener("template-loaded", () => {
+    const productList = document.querySelector(".product-preview__list");
+    const productItems = document.querySelectorAll(".product-preview__item");
+    const productThumbs = document.querySelectorAll(".product-preview__thumbs-img");
+    const productThumbDesc = "product-preview__thumbs-img--current";
+    if (productThumbs) {
+        productThumbs.forEach((item, index) => {
+            item.onclick = (e) => {
+                var currentProduct = document.querySelector(
+                    ".product-preview__thumbs-img.product-preview__thumbs-img--current"
+                );
+                currentProduct.classList.remove(productThumbDesc);
+                productThumbs[index].classList.add(productThumbDesc);
+                let checkLeft = productItems[index].offsetWidth;
+                productList.style.transform = `translateX(${-checkLeft * index}px)`;
+            };
+        });
+    }
+});

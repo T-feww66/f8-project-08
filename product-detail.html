@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <!-- dark -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- link fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- link css -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <!-- boxicons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <!-- link scripts -->
+        <script src="./assets/js/scripts.js"></script>
+        <title>Coffee Grocery</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./template/header-logined.html");
+        </script>
+        <!-- Main -->
+        <main class="product">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <div class="product__container">
+                    <div class="breadcrumb">
+                        <ul class="breadcrumb__list">
+                            <li>
+                                <a href="#!" class="breadcrumb__item">
+                                    Departments
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#!" class="breadcrumb__item">
+                                    Coffee
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#!" class="breadcrumb__item">
+                                    Coffee Beans
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#!" class="breadcrumb__item breadcrumb__item--active"> LavAzza </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product__container">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="product-preview">
+                                <div class="product-preview__list-wrap">
+                                    <div class="product-preview__list">
+                                        <div class="product-preview__item">
+                                            <img
+                                                src="./assets/img/product/item-1.png"
+                                                alt=""
+                                                class="product-preview__img"
+                                            />
+                                        </div>
+
+                                        <div class="product-preview__item">
+                                            <img
+                                                src="./assets/img/product/item-2.png"
+                                                alt=""
+                                                class="product-preview__img"
+                                            />
+                                        </div>
+                                        <div class="product-preview__item">
+                                            <img
+                                                src="./assets/img/product/item-3.png"
+                                                alt=""
+                                                class="product-preview__img"
+                                            />
+                                        </div>
+                                        <div class="product-preview__item">
+                                            <img
+                                                src="./assets/img/product/item-4.png"
+                                                alt=""
+                                                class="product-preview__img"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-preview__thumbs">
+                                    <img
+                                        src="./assets/img/product/item-1.png"
+                                        alt=""
+                                        class="product-preview__thumbs-img product-preview__thumbs-img--current"
+                                    />
+
+                                    <img
+                                        src="./assets/img/product/item-2.png"
+                                        alt=""
+                                        class="product-preview__thumbs-img"
+                                    />
+
+                                    <img
+                                        src="./assets/img/product/item-3.png"
+                                        alt=""
+                                        class="product-preview__thumbs-img"
+                                    />
+                                    <img
+                                        src="./assets/img/product/item-4.png"
+                                        alt=""
+                                        class="product-preview__thumbs-img"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="product-info">
+                                <h1 class="product-info__heading">Coffee Beans - Espresso Arabica and Robusta Beans</h1>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="product-prop">
+                                            <img src="./assets/icons/start.svg" alt="" class="product-prop__icon" />
+                                            <div>
+                                                <h4 class="product-prop__title">(3.5) 1100 reviews</h4>
+                                                <p class="product-prop__desc"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- col 2 -->
+                                    <div class="col-6">
+                                        <div class="product-prop">
+                                            <img
+                                                src="./assets/icons/document.svg"
+                                                alt
+                                                class="product-prop__icon icon"
+                                                =""
+                                            />
+                                            <div>
+                                                <h4 class="product-prop__title">Compare</h4>
+                                                <p class="product-prop__desc"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-prop">
+                                            <img src="./assets/icons/buy.svg" alt="" / class="product-prop__icon icon">
+                                            <div>
+                                                <h4 class="product-prop__title">Delivery</h4>
+                                                <p class="product-prop__desc">From $6 for 1-3 days</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-prop">
+                                            <img src="./assets/icons/bag.svg" alt="" / class="product-prop__icon icon">
+                                            <div>
+                                                <h4 class="product-prop__title">Pickup</h4>
+                                                <p class="product-prop__desc">Out of 2 store, today</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./template/footer.html");
+        </script>
+    </body>
+</html>
