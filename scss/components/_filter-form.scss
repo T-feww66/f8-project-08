@@ -96,66 +96,13 @@
             }
         }
 
-        &-text-input,
-        &-select-wrap {
+        &-text-input{
             border-radius: 6px;
             border: 1px solid #d2d1d6;
         }
 
-        &-select-wrap {
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-            display: flex;
-            align-items: center;
-            height: 45px;
-        }
+       
 
-        &-select {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-width: var(--width, 108px);
-            height: calc(100% - 10px);
-            padding: 0 14px;
-            cursor: pointer;
-
-            @include abstracts.screen(xl) {
-                flex-grow: 1;
-            }
-        }
-
-        &-select + &-select {
-            border-left: 1px solid#D2D1D6;
-        }
-
-        &-tags {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-            @include abstracts.screen(sm) {
-                gap: 16px 8px;
-            }
-        }
-
-        &-tag {
-            padding: 6px 12px;
-
-            border-radius: 6px;
-            background: var(--filter-form-tag);
-
-            color: #9e9da8;
-
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 142.857%;
-            transition: 0.2s;
-
-            &:hover {
-                color: var(--text-color);
-            }
-        }
 
         // text input
         &-text-input {
@@ -205,18 +152,14 @@
 
     // End form
 
-    &__form-label,
+    
     &__heading {
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
     }
 
-    &__form-label--small {
-        margin-bottom: 10px;
-        font-size: 1.4rem;
-        line-height: 142.857%;
-    }
+    
 
     &__separate {
         width: 1px;

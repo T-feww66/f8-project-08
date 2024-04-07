@@ -60,7 +60,7 @@ html {
     }
 
     //  Breadcrumb
-    --breadcrumb-bg: #e9e8e8;
+    --breadcrumb-bg: #f6f6f6;
 
     @include abstracts.screen(md) {
     --breadcrumb-bg: #fff;

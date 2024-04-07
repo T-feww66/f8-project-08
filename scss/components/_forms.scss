@@ -1,9 +1,8 @@
 @use "../abstracts";
 
 .form {
-
     &:has(:invalid) &__submit-btn,
-    &:has(.invalid) &__submit-btn{
+    &:has(.invalid) &__submit-btn {
         opacity: 0.4;
         pointer-events: none;
     }
@@ -117,5 +116,80 @@
     &__icon {
         width: 16px;
         height: 16px;
+    }
+
+    // form label
+    &__label {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+    }
+
+    &__label--small {
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+
+    &__tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        @include abstracts.screen(sm) {
+            gap: 16px 8px;
+        }
+    }
+
+    &__tag {
+        padding: 6px 12px;
+
+        border-radius: 6px;
+        background: var(--form-tag);
+
+        color: #9e9da8;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+        transition: 0.2s;
+
+        &:hover {
+            color: var(--text-color);
+        }
+    }
+
+    &__select-wrap {
+        border-radius: 6px;
+        border: 1px solid #d2d1d6;
+    }
+
+    &__select-wrap {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 45px;
+    }
+
+    &__select {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: var(--width, 108px);
+        height: calc(100% - 10px);
+        padding: 0 14px;
+        cursor: pointer;
+
+        @include abstracts.screen(xl) {
+            flex-grow: 1;
+            --width: 86px;
+        }
+    }
+
+    &__select + &__select {
+        border-left: 1px solid#D2D1D6;
     }
 }
