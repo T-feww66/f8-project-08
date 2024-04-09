@@ -60,4 +60,21 @@ html.dark {
     //  Breadcrumb
     --breadcrumb-bg: #171c28;
     --breadcrumb-shadow: rgba(23, 28, 40, 0.2);
+
+    // product-detail
+    --product-detail-bg: #292e39;
+    @include abstracts.screen(md) {
+        --product-detail-bg: #292e39;
+        --product-detail-container-bg: #171c28; 
+    }
+    --product-detail-tag-bg: #292e39;
+
+    // Product info
+    --product-info-bg: #171c28;
+    @include abstracts.screen(md) {
+        --product-info-bg: tranparent;
+    }
+
+    // Search
+    --search-bg: #171c28;
 }

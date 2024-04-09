@@ -4,6 +4,10 @@
     background-color: var(--breadcrumb-bg);
     box-shadow: 0px 20px 60px 10px var(--breadcrumb-shadow);
     padding: 20px;
+    
+    @include abstracts.screen(md) {
+        border-radius: 20px;    
+    }
 
     &__list {
         display: flex;

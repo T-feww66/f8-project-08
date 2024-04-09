@@ -1,12 +1,28 @@
 @use "../abstracts";
+
+.product {
+    padding: 10px 0 40px 0;
+    background-color: var(--product-detail-bg);
+}
 .product__container {
     margin-top: 30px;
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
+}
+
+.product__detail-container {
+    border-radius: 20px;
+    background-color: var(--product-detail-container-bg);
 }
 
 .product-preview {
+    border-radius: 20px;
     padding: 0 30px;
+    background-color: transparent;
 
     @include abstracts.screen(md) {
+        padding: 16px;
         display: flex;
         flex-direction: row-reverse;
     }
@@ -61,10 +77,10 @@
             transition: all 0.2s;
             opacity: 0.9;
 
-        @include abstracts.screen(md) {
-            width: 50px;
-            height: 50px;
-        }
+            @include abstracts.screen(md) {
+                width: 50px;
+                height: 50px;
+            }
 
             &:hover {
                 scale: 1.1;
@@ -81,14 +97,20 @@
 }
 
 .product-info {
-    background: #f6f6f6;
+    background: var(--product-info-bg);
     padding: 60px;
+    border-radius: 10px;
 
     @include abstracts.screen(xl) {
         padding: 20px;
     }
+
+    @include abstracts.screen(xl) {
+        border-radius: 20px;
+    }
     @include abstracts.screen(md) {
-        margin-top: 30px;
+        margin-top: 0;
+        padding: 16px;
     }
 
     &__heading {
@@ -102,6 +124,11 @@
         padding: 20px;
         border-radius: 6px;
         border: 1px solid #b9babe;
+
+        @include abstracts.screen(md) {
+            max-width: 400px;
+            margin-top: 20px;
+        }
     }
 
     &__row {
@@ -114,12 +141,18 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+        }
     }
 
-    &__fax {
+    &__tax {
         padding: 2px 8px;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
-        color: var(--Green-Green, #67b044);
+        background: rgb(103 176 68 / 20%);
+        color: #67b044;
 
         font-size: 1.4rem;
         font-weight: 500;
@@ -147,7 +180,7 @@
     }
 
     &__tag {
-        background-color: #ededf6;
+        background-color: var(--product-detail-tag-bg);
     }
 }
 
@@ -163,6 +196,10 @@
     margin-top: 30px;
     display: flex;
     gap: 16px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 
     &__title {
         font-size: 1.8rem;

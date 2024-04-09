@@ -1,6 +1,7 @@
 @use "../abstracts";
 
 .home {
+    padding-bottom: 40px;
     &__container {
         margin-top: 40px;
         @include abstracts.screen(md) {

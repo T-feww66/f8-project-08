@@ -172,6 +172,9 @@
         align-items: center;
         justify-content: space-between;
         height: 45px;
+        @include abstracts.screen(lg) {
+            max-width: 300px;
+        }
     }
 
     &__select {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <!-- dark -->
     <head>
         <meta charset="UTF-8" />
@@ -35,6 +35,15 @@
         <!-- Main -->
         <main class="product">
             <div class="container">
+                <!-- Search -->
+                <div class="product__container">
+                    <div class="search d-none d-md-flex">
+                        <input type="text" name="" placeholder="Search for item" id="" class="search__input" />
+                        <button class="search__btn">
+                            <img src="./assets/icons/search.svg" alt="" class="search__icon icon" />
+                        </button>
+                    </div>
+                </div>
                 <!-- Breadcrumb -->
                 <div class="product__container">
                     <div class="breadcrumb">
@@ -67,7 +76,7 @@
                     </div>
                 </div>
 
-                <div class="product__container">
+                <div class="product__container product__detail-container">
                     <div class="row">
                         <div class="col-5 col-lx-6 col-lg-12">
                             <div class="product-preview">
@@ -222,16 +231,26 @@
                                         <div class="product-info__card">
                                             <div class="product-info__row">
                                                 <span class="product-info__price">$500.00</span>
-                                                <span class="product-info__fax">10%</span>
+                                                <span class="product-info__tax">10%</span>
                                             </div>
 
                                             <span class="product-info__total">$540.00</span>
 
                                             <div class="product-info__row">
-                                                <button class="btn btn--primary product-info__add-to-cart">Add to cart</button>
+                                                <button class="btn btn--primary product-info__add-to-cart">
+                                                    Add to cart
+                                                </button>
                                                 <button class="like-btn product-info__like-btn like-btn__liked">
-                                                    <img src="./assets/icons/hearth.svg" alt="" class="like-btn__icon icon">
-                                                    <img src="./assets/icons/hearth-red.svg" alt="" class="like-btn__icon--liked">
+                                                    <img
+                                                        src="./assets/icons/hearth.svg"
+                                                        alt=""
+                                                        class="like-btn__icon icon"
+                                                    />
+                                                    <img
+                                                        src="./assets/icons/hearth-red.svg"
+                                                        alt=""
+                                                        class="like-btn__icon--liked"
+                                                    />
                                                 </button>
                                             </div>
                                         </div>
