@@ -1,0 +1,42 @@
+.preview-card {
+    border-radius: 16px;
+    background: var(--preview-card-bg);
+    padding: 30px;
+
+    &__avatar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+    }
+
+    &__desc {
+        margin-top: 10px;
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+
+    &__rating {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__score {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+}

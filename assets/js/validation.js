@@ -122,7 +122,6 @@ function Validator(formSelector, option = {}) {
 
     formElement.onsubmit = (e) => {
         // e.preventDefault();
-
         var inputs = formElement.querySelectorAll("input[name][rules]");
         var isValid = false;
         // lặp qua inputs

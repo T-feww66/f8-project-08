@@ -206,11 +206,14 @@ window.addEventListener("template-loaded", () => {
 window.addEventListener("template-loaded", () => {
     const submitPassword = document.querySelector(".auth__submit-forgot-password");
     const message = document.querySelector(".message");
+    const textInput = document.querySelector(".auth__form-input")
     if (submitPassword) {
         submitPassword.onclick = (e) => {
-            e.preventDefault();
-            if (message) {
-                message.classList.add("message__success");
+            if(textInput.type == "email") {
+                if (message) {
+                    e.preventDefault();
+                    message.classList.add("message__success");
+                }
             }
         };
     }
@@ -234,4 +237,23 @@ window.addEventListener("template-loaded", () => {
             };
         });
     }
+});
+
+window.addEventListener("template-loaded", () => {
+    const tabItems = document.querySelectorAll(".product-tab__item");
+    const tabContents = document.querySelectorAll(".product-tab__content");
+    const itemCurrent = "product-tab__item--current";
+    const contentCurrent = "product-tab__content--current";
+
+    tabItems.forEach((tabItem, index) => {
+        const content = tabContents[index];
+        tabItem.onclick = function () {
+            const tabItemCurrent = document.querySelector(`.product-tab__item.${itemCurrent}`);
+            const tabCotentCurrent = document.querySelector(`.product-tab__content.${contentCurrent}`);
+            tabItemCurrent.classList.remove(itemCurrent);
+            tabCotentCurrent.classList.remove(contentCurrent);
+            this.classList.add(itemCurrent);
+            content.classList.add(contentCurrent);
+        };
+    });
 });
