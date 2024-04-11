@@ -70,7 +70,6 @@ html {
     // product-detail
     --product-detail-bg: #fcfcfd;
     --product-detail-tag-bg: #ededf6;
-    
 
     // Product info
     --product-info-bg: #f6f6f6;
@@ -83,4 +82,10 @@ html {
 
     // Preview card
     --preview-card-bg: #fafafd;
+    --preview-card-shadow: rgba(237, 237, 246, 0.2);
+
+
+    @include abstracts.screen(md) {
+        --preview-card-bg: #fff;
+    }
 }

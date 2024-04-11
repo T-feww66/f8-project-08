@@ -252,6 +252,10 @@
 
     &__contents {
         padding-top: 30px;
+
+        &-mt {
+            padding-top: 0;
+        }
     }
 
     &__content {
@@ -262,9 +266,9 @@
     }
 
     &__heading {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: 700;
         line-height: 141.667%;
-        margin-bottom: 20px;
+        margin: 20px 0;
     }
 }

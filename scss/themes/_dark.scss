@@ -65,7 +65,7 @@ html.dark {
     --product-detail-bg: #292e39;
     @include abstracts.screen(md) {
         --product-detail-bg: #292e39;
-        --product-detail-container-bg: #171c28; 
+        --product-detail-container-bg: #171c28;
     }
     --product-detail-tag-bg: #292e39;
 
@@ -77,4 +77,8 @@ html.dark {
 
     // Search
     --search-bg: #171c28;
+
+    // Preview card
+    --preview-card-bg: #171c28;
+    --preview-card-shadow: rgba(23, 28, 40, 0.2);
 }
