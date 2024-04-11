@@ -206,10 +206,10 @@ window.addEventListener("template-loaded", () => {
 window.addEventListener("template-loaded", () => {
     const submitPassword = document.querySelector(".auth__submit-forgot-password");
     const message = document.querySelector(".message");
-    const textInput = document.querySelector(".auth__form-input")
+    const textInput = document.querySelector(".auth__form-input");
     if (submitPassword) {
         submitPassword.onclick = (e) => {
-            if(textInput.type == "email") {
+            if (textInput.type == "email") {
                 if (message) {
                     e.preventDefault();
                     message.classList.add("message__success");
@@ -240,20 +240,23 @@ window.addEventListener("template-loaded", () => {
 });
 
 window.addEventListener("template-loaded", () => {
-    const tabItems = document.querySelectorAll(".product-tab__item");
-    const tabContents = document.querySelectorAll(".product-tab__content");
-    const itemCurrent = "product-tab__item--current";
-    const contentCurrent = "product-tab__content--current";
+    const tabsSelector = "product-tab__item";
+    const contentsSelector = "product-tab__content";
 
-    tabItems.forEach((tabItem, index) => {
-        const content = tabContents[index];
-        tabItem.onclick = function () {
-            const tabItemCurrent = document.querySelector(`.product-tab__item.${itemCurrent}`);
-            const tabCotentCurrent = document.querySelector(`.product-tab__content.${contentCurrent}`);
-            tabItemCurrent.classList.remove(itemCurrent);
-            tabCotentCurrent.classList.remove(contentCurrent);
-            this.classList.add(itemCurrent);
-            content.classList.add(contentCurrent);
-        };
+    const tabActive = `${tabsSelector}--current`;
+    const contentActive = `${contentsSelector}--current`;
+
+    const tabContainers = $$(".js-tabs");
+    tabContainers.forEach((tabContainer) => {
+        const tabs = tabContainer.querySelectorAll(`.${tabsSelector}`);
+        const contents = tabContainer.querySelectorAll(`.${contentsSelector}`);
+        tabs.forEach((tab, index) => {
+            tab.onclick = () => {
+                tabContainer.querySelector(`.${tabActive}`)?.classList.remove(tabActive);
+                tabContainer.querySelector(`.${contentActive}`)?.classList.remove(contentActive);
+                tab.classList.add(tabActive);
+                contents[index].classList.add(contentActive);
+            };
+        });
     });
 });

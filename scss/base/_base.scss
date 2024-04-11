@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -34,7 +38,6 @@ select {
     outline: none;
     border: none;
     color: inherit;
-    -webkit-tap-highlight-color: transparent;
 }
 
 input {
@@ -57,11 +60,13 @@ button {
     }
 }
 
-i, em {
+i,
+em {
     font-style: italic;
 }
 
-b, strong {
+b,
+strong {
     font-weight: 600;
 }
 

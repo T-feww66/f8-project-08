@@ -141,6 +141,10 @@ table {
   box-sizing: border-box;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -167,7 +171,6 @@ select {
   outline: none;
   border: none;
   color: inherit;
-  -webkit-tap-highlight-color: transparent;
 }
 
 input {
@@ -190,11 +193,13 @@ button {
   }
 }
 
-i, em {
+i,
+em {
   font-style: italic;
 }
 
-b, strong {
+b,
+strong {
   font-weight: 600;
 }
 
@@ -2723,6 +2728,9 @@ html {
 }
 
 .preview-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 16px;
   background: var(--preview-card-bg);
   padding: 30px;
@@ -2732,6 +2740,20 @@ html {
   align-items: center;
   gap: 10px;
 }
+@media (max-width: 1199.98px) {
+  .preview-card__avatar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 767.98px) {
+  .preview-card__avatar {
+    flex-direction: row;
+    align-items: initial;
+    text-align: initial;
+  }
+}
 .preview-card__avatar-img {
   width: 80px;
   height: 80px;
@@ -2739,25 +2761,47 @@ html {
   border-radius: 50%;
 }
 .preview-card__title {
+  white-space: nowrap;
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 145.455%;
 }
+@media (max-width: 767.98px) {
+  .preview-card__title {
+    font-size: 1.8rem;
+    line-height: 144.444%;
+  }
+}
 .preview-card__desc {
-  margin-top: 10px;
+  margin: 10px 0 20px;
   font-size: 1.6rem;
   line-height: 150%;
 }
 .preview-card__rating {
-  margin-top: 20px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+@media (max-width: 1199.98px) {
+  .preview-card__rating {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767.98px) {
+  .preview-card__rating {
+    margin-top: 20px;
+    flex-direction: row;
+  }
 }
 .preview-card__score {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 144.444%;
+}
+.preview-card__star-wrap {
+  display: flex;
+  gap: 8px;
 }
 
 .text-content {
@@ -3262,13 +3306,27 @@ html {
   display: flex;
   margin: 0 -30px;
 }
+@media (max-width: 767.98px) {
+  .product-tab__list {
+    flex-wrap: wrap;
+    white-space: nowrap;
+    margin: 0 -15px;
+  }
+}
 .product-tab__item {
   padding: 0 30px;
   color: #9e9da8;
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 145.455%;
+  user-select: none;
   cursor: pointer;
+}
+@media (max-width: 767.98px) {
+  .product-tab__item {
+    font-size: 1.8rem;
+    padding: 8px 15px;
+  }
 }
 .product-tab__item--current {
   color: inherit;
