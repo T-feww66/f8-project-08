@@ -20,6 +20,12 @@ html {
     --dropdown-bg: #fff;
     --dropdown-shadow-bg: rgba(200, 200, 200, 0.4);
 
+    --dropdown-cart-bg: var(--dropdown-bg);
+    --dropdown-cart-shadow: var(--dropdown-shadow-bg);
+    --dropdown-border-color: #d2d1d6;
+
+    --dropdown-thumb-border-color: var(--dropdown-border-color);
+
     // top menu
     --top-menu-border-color: #d2d1d6;
 
@@ -83,7 +89,6 @@ html {
     // Preview card
     --preview-card-bg: #fafafd;
     --preview-card-shadow: rgba(237, 237, 246, 0.2);
-
 
     @include abstracts.screen(md) {
         --preview-card-bg: #fff;

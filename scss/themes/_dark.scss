@@ -18,6 +18,10 @@ html.dark {
     --dropdown-arrow: brightness(0) saturate(100%) invert(17%) sepia(12%) saturate(1228%) hue-rotate(172deg)
         brightness(94%) contrast(96%);
 
+    --dropdown-border-color: #171c28;
+    --dropdown-thumb-border-color: var(--dropdown-border-color);
+
+
     // top menu
     --top-menu-border-color: #171c28;
 
