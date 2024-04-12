@@ -3490,14 +3490,28 @@ html {
   background-color: #fff;
 }
 
+.cart + .cart {
+  margin-top: 30px;
+}
+
 .cart {
   border-radius: 20px;
   background: var(--Secondary-Color-Background, #fff);
   box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
   padding: 30px;
 }
+@media (max-width: 767.98px) {
+  .cart {
+    padding: 16px;
+  }
+}
 .cart__list {
   margin-top: -30px;
+}
+@media (max-width: 767.98px) {
+  .cart__list {
+    margin-top: -16px;
+  }
 }
 .cart__item {
   padding: 30px 0;
@@ -3506,9 +3520,23 @@ html {
   align-items: center;
   gap: 30px;
 }
+@media (max-width: 767.98px) {
+  .cart__item {
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+  .cart__item:last-child {
+    border: none;
+  }
+}
 .cart__info {
   flex: 1;
   display: flex;
+}
+@media (max-width: 991.98px) {
+  .cart__info {
+    flex-direction: column;
+  }
 }
 .cart__info-title {
   max-width: 374px;
@@ -3516,10 +3544,32 @@ html {
   font-weight: 500;
   line-height: 144.444%;
 }
+@media (max-width: 767.98px) {
+  .cart__info-title {
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
 .cart__info-right {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1199.98px) {
+  .cart__info-right {
+    align-items: flex-end;
+  }
+}
+@media (max-width: 991.98px) {
+  .cart__info-right {
+    margin-top: 16px;
+    align-items: flex-start;
+  }
+}
+.cart__info-separate {
+  margin-top: 30px;
+  height: 1px;
+  background-color: #d2d1d6;
 }
 .cart__price {
   margin: 16px 0;
@@ -3534,6 +3584,19 @@ html {
 .cart__thumb-img {
   width: 172px;
   height: 172px;
+  object-fit: contain;
+}
+@media (max-width: 991.98px) {
+  .cart__thumb-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cart__thumb-img {
+    width: 70px;
+    height: 70px;
+  }
 }
 .cart__row {
   display: flex;
@@ -3543,6 +3606,13 @@ html {
 .cart__row-btn {
   margin-top: auto;
   gap: 30px;
+}
+@media (max-width: 767.98px) {
+  .cart__row-ctrl {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .cart__input {
   padding: 0 20px;
@@ -3556,6 +3626,12 @@ html {
   border-radius: 10px;
   border: 1px solid #d2d1d6;
 }
+@media (max-width: 767.98px) {
+  .cart__input {
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
 .cart__total {
   display: block;
   text-align: right;
@@ -3563,11 +3639,121 @@ html {
   font-weight: 700;
   line-height: 145.455%;
 }
+@media (max-width: 991.98px) {
+  .cart__total {
+    text-align: left;
+  }
+}
+@media (max-width: 767.98px) {
+  .cart__total {
+    font-size: 1.8rem;
+    line-height: 144.444%;
+  }
+}
 .cart__btn {
   height: 44px;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #9e9da8;
+  font-weight: 500;
+  line-height: 150%;
+}
+.cart__bottom {
+  margin-top: 30px;
+}
+.cart__bottom-continue {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.cart__bottom-continue:hover .cart__bottom-icon {
+  scale: 1.1;
+  translate: -5px;
+}
+.cart__bottom-icon {
+  margin-bottom: 5px;
+  width: 15px;
+  height: 15px;
+  rotate: 90deg;
+  transition: all 0.3s;
+}
+.cart__bottom-continue, .cart__info-row {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .cart__bottom-continue, .cart__info-row {
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+}
+.cart__info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart__info-row--bold {
+  margin-top: 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 145.455%;
+}
+.cart__info-row-mt {
+  margin-top: 30px;
+}
+.cart__info-row + .cart__info-row {
+  margin-top: 10px;
+}
+.cart__info-row-sub {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.cart__checkout-btn {
+  margin-top: 30px;
+}
+
+.gift {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.gift__thumb {
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: rgba(118, 68, 225, 0.1);
+  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+}
+.gift__thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 767.98px) {
+  .gift__thumb {
+    width: 60px;
+    height: 60px;
+  }
+}
+.gift__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .gift__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
+.gift__desc {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 142.857%;
 }
 
 /*# sourceMappingURL=main.css.map */
