@@ -93,4 +93,16 @@ html {
     @include abstracts.screen(md) {
         --preview-card-bg: #fff;
     }
+
+    // checkout
+    --checkout-breadcrumb-bg: #Fff;
+    --checkout-cart-bg: #fff;
+    --checkout-cart-shadow: rgba(237, 237, 246, 0.2);
+    --cart-border-color: #d2d1d6;
+    --checkout-gift-bg: rgb(118, 68, 225, 0.1);
+    --checkout-gift-shadow: rgba(237, 237, 246, 0.2);
+
+    // dialog
+    --dialog-bg: #fff;
+    --dialog-shadow:rgba(237, 237, 246, 0.2);
 }

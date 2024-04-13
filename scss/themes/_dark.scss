@@ -21,7 +21,6 @@ html.dark {
     --dropdown-border-color: #171c28;
     --dropdown-thumb-border-color: var(--dropdown-border-color);
 
-
     // top menu
     --top-menu-border-color: #171c28;
 
@@ -85,4 +84,15 @@ html.dark {
     // Preview card
     --preview-card-bg: #171c28;
     --preview-card-shadow: rgba(23, 28, 40, 0.2);
+
+    // checkout
+    --checkout-breadcrumb-bg: #171c28;
+    --checkout-cart-bg: #171c28;
+    --checkout-cart-shadow: rgba(23, 28, 40, 0.2);
+    --cart-border-color: #292e39;
+    --checkout-gift-shadow: rgba(23, 28, 40, 0.2);
+
+    // dialog
+    --dialog-bg: #242f3c;
+    --dialog-shadow: rgba(23, 28, 40, 0.4);
 }

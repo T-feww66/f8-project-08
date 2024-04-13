@@ -11,17 +11,24 @@
     }
 
     &__breadcrumb {
-        background-color: #fff;
+        background-color: var(--checkout-breadcrumb-bg);
+        @include abstracts.screen(md) {
+            padding: 16px;
+        }
     }
 }
 .cart + .cart {
     margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 }
 
 .cart {
     border-radius: 20px;
-    background: var(--Secondary-Color-Background, #fff);
-    box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+    background: var(--checkout-cart-bg);
+    box-shadow: 0px 20px 60px 10px var(--checkout-cart-shadow);
     padding: 30px;
 
     @include abstracts.screen(md) {
@@ -37,7 +44,7 @@
 
     &__item {
         padding: 30px 0;
-        border-bottom: 1px solid #d2d1d6;
+        border-bottom: 1px solid var(--cart-border-color);
         display: flex;
         align-items: center;
         gap: 30px;
@@ -45,6 +52,7 @@
         @include abstracts.screen(md) {
             align-items: flex-start;
             padding: 16px 0;
+            gap: 16px;
 
             &:last-child {
                 border: none;
@@ -75,7 +83,6 @@
             display: flex;
             flex-direction: column;
 
-
             @include abstracts.screen(xl) {
                 align-items: flex-end;
             }
@@ -87,9 +94,9 @@
         }
 
         &-separate {
-            margin-top: 30px;
+            margin: 30px 0;
             height: 1px;
-            background-color: #d2d1d6;
+            background-color: var(--cart-border-color);
         }
     }
 
@@ -207,6 +214,11 @@
             rotate: 90deg;
             transition: all 0.3s;
         }
+        &-btn {
+            font-size: 2.2rem;
+            height: 68px;
+            padding: 0 40px;
+        }
     }
 
     &__bottom-continue,
@@ -227,14 +239,9 @@
         justify-content: space-between;
 
         &--bold {
-            margin-top: 30px;
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 145.455%;
-        }
-
-        &-mt {
-            margin-top: 30px;
         }
 
         & + & {
@@ -250,6 +257,20 @@
     &__checkout-btn {
         margin-top: 30px;
     }
+
+    // shipping
+    &__heading {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 141.667%;
+    }
+
+    &__shipping-title {
+        margin: 30px 0;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
 }
 
 .gift {
@@ -259,8 +280,8 @@
     &__thumb {
         flex-shrink: 0;
         border-radius: 14px;
-        background: rgb(118, 68, 225, 0.1);
-        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+        background: var(--checkout-gift-bg);
+        box-shadow: 0px 20px 60px 10px var(--checkout-gift-shadow);
 
         &-img {
             width: 100%;
@@ -291,5 +312,141 @@
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 142.857%;
+    }
+}
+
+.user-address {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        @include abstracts.screen(md) {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+
+    &__desc {
+        margin-top: 4px;
+        font-size: 1.5rem;
+        line-height: 146.667%;
+    }
+}
+
+.address {
+    &__list {
+    }
+
+    &__not-item {
+        margin-top: 30px;
+        font-size: 1.6rem;
+        line-height: 144.444%;
+
+        &-link {
+            color: #0071dc;
+        }
+    }
+
+    &__item {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        &-info {
+            flex: 1;
+        }
+
+        &-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.6rem;
+                line-height: 150%;
+            }
+        }
+
+        &-desc {
+            max-width: 500px;
+            margin-top: 4px;
+            font-size: 1.5rem;
+            line-height: 146.667%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+                line-height: 142.857%;
+            }
+        }
+
+        &-list {
+            padding-left: 10px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: disc inside;
+
+            font-size: 1.4rem;
+            line-height: 142.857%;
+
+            @include abstracts.screen(sm) {
+                margin-top: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+
+        &-left {
+            flex: 1;
+            display: flex;
+            gap: 16px;
+        }
+
+        &-edit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+        }
+
+        &-edit-wrap {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &__input {
+        &-checkbox {
+            appearance: none;
+            &::before {
+                content: url(../icons/icon-not-checkbox.svg);
+            }
+
+            &:not(:checked)::before {
+                filter: var(--color-icon);
+            }
+
+            &:checked::before {
+                content: url(../icons/icon-checkbox.svg);
+            }
+        }
     }
 }

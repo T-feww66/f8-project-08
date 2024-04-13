@@ -1,0 +1,62 @@
+@use "../abstracts";
+%full-screen {
+    position: fixed;
+    inset: 0;
+}
+
+.dialog {
+    @extend %full-screen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+
+    transition: all 0.3s linear;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        scale: 1;
+    }
+    &__inner {
+        max-width: min(450px, 100% - 40px);
+        position: relative;
+        z-index: 1;
+        padding: 30px;
+        border-radius: 20px;
+        background: var(--dialog-bg);
+        box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 150%
+    }
+
+    &__opacity {
+        @extend %full-screen;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+    }
+
+    &__bottom {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    @include abstracts.screen(md) {
+        &__bottom {
+            gap: 20px;
+        }
+        &__btn {
+            flex: 1;
+        }
+    }
+}
