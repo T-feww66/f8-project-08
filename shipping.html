@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <!-- dark -->
     <head>
         <meta charset="UTF-8" />
@@ -86,7 +86,10 @@
                                             <p class="user-address__desc">Where should we deliver your order?</p>
                                         </div>
 
-                                        <button class="btn btn--primary btn--rounded">
+                                        <button
+                                            class="btn btn--primary btn--rounded js-toggle"
+                                            toggle-target="#modal-add-address"
+                                        >
                                             <img src="./assets/icons/plus.svg" alt="" />
                                             Add a new address
                                         </button>
@@ -97,7 +100,12 @@
                                             <div class="address__list">
                                                 <p class="address__not-item d-none">
                                                     Not address yet.
-                                                    <a href="#!" class="address__not-item-link">Click to add adrress</a>
+                                                    <a
+                                                        href="#!"
+                                                        class="address__not-item-link js-toggle"
+                                                        toggle-target="#modal-add-address"
+                                                        >Click to add adrress</a
+                                                    >
                                                 </p>
 
                                                 <div class="cart__info-separate"></div>
@@ -108,8 +116,8 @@
                                                         <div class="address__item-input">
                                                             <label class="address__input">
                                                                 <input
-                                                                    type="checkbox"
-                                                                    name=""
+                                                                    type="radio"
+                                                                    name="checkaddress"
                                                                     class="address__input-checkbox"
                                                                     checked
                                                                 />
@@ -130,7 +138,10 @@
                                                     </div>
                                                     <div class="address__item-right">
                                                         <div class="address__item-edit-wrap">
-                                                            <button class="address__item-edit">
+                                                            <button
+                                                                class="address__item-edit js-toggle"
+                                                                toggle-target="#modal-add-address"
+                                                            >
                                                                 <img
                                                                     src="./assets/icons/edit.svg"
                                                                     alt=""
@@ -149,8 +160,8 @@
                                                         <div class="address__item-input">
                                                             <label class="address__input">
                                                                 <input
-                                                                    type="checkbox"
-                                                                    name=""
+                                                                    type="radio"
+                                                                    name="checkaddress"
                                                                     class="address__input-checkbox"
                                                                 />
                                                             </label>
@@ -171,7 +182,10 @@
                                                     </div>
                                                     <div class="address__item-right">
                                                         <div class="address__item-edit-wrap">
-                                                            <button class="address__item-edit">
+                                                            <button
+                                                                class="address__item-edit js-toggle"
+                                                                toggle-target="#modal-add-address"
+                                                            >
                                                                 <img
                                                                     src="./assets/icons/edit.svg"
                                                                     alt=""
@@ -235,7 +249,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -288,7 +302,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -341,7 +355,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -428,20 +442,140 @@
             load("#footer", "./template/footer.html");
         </script>
 
-        <div class="dialog hide" id="dialog-delete">
-            <div class="dialog__inner">
-                <h4 class="dialog__text">The product will be removed from the cart</h4>
-                <div class="dialog__bottom">
-                    <button class="btn btn--text dialog__btn js-toggle" toggle-target="#dialog-delete">Cancel</button>
+        <!-- Dialog / Model -->
+        <div class="modal modal--small hide" id="modal-delete">
+            <div class="modal__inner">
+                <h4 class="modal__text">The product will be removed from the cart</h4>
+                <div class="modal__bottom">
+                    <button class="btn btn--text modal__btn js-toggle" toggle-target="#modal-delete">Cancel</button>
                     <button
-                        class="btn btn--primary btn--small dialog__btn btn-not-margin js-toggle"
-                        toggle-target="#dialog-delete"
+                        class="btn btn--primary btn--small modal__btn btn-not-margin js-toggle"
+                        toggle-target="#modal-delete"
                     >
                         Confirm
                     </button>
                 </div>
             </div>
-            <div class="dialog__opacity js-toggle" toggle-target="#dialog-delete"></div>
+            <div class="modal__opacity js-toggle" toggle-target="#modal-delete"></div>
         </div>
+
+        <!-- Modal: Add new shipping address -->
+        <div class="modal hide" id="modal-add-address" style="--modal-width: 650px">
+            <div class="modal__inner">
+                <form action="" class="form" id="form-address">
+                    <div class="modal__body">
+                        <h2 class="modal__heading">Add new shipping address</h2>
+                        <div class="form__row">
+                            <!-- Name -->
+                            <div class="form__group">
+                                <label for="name" class="form__label form__label--small">Name</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        rules="required"
+                                        placeholder="Name"
+                                        class="form__input"
+                                        required
+                                    />
+                                    <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                                </div>
+                                <span class="form__message"></span>
+                            </div>
+                            <!-- Phone -->
+                            <div class="form__group">
+                                <label for="phone" class="form__label form__label--small">Phone</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        rules="required|min:10"
+                                        placeholder="Phone"
+                                        class="form__input"
+                                        required
+                                    />
+                                    <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                                </div>
+                                <span class="form__message"></span>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form__group">
+                            <label for="address" class="form__label form__label--small">Address</label>
+
+                            <div class="form__text-area">
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    rules="required"
+                                    placeholder="Address (Area and street)"
+                                    class="form__textarea"
+                                    required
+                                ></textarea>
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                            </div>
+                            <span class="form__message"></span>
+                        </div>
+                        <!-- Select address -->
+                        <div class="form__group">
+                            <label for="select-address" class="form__label form__label--small"
+                                >Select your address</label
+                            >
+                            <div class="form__text-input form__text-input--small">
+                                <input
+                                    type="text"
+                                    id="select-address"
+                                    name="select-address"
+                                    rules="required"
+                                    placeholder="City/District/Town"
+                                    class="form__input"
+                                    required
+                                />
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                            </div>
+                            <span class="form__message"></span>
+                        </div>
+                        <!-- Default address  -->
+                        <div class="form__group">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" required />
+                                <span class="form__checkbox-label">Set as default address</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal__bottom">
+                        <button class="btn btn--text modal__btn js-toggle" toggle-target="#modal-add-address">
+                            Cancel
+                        </button>
+                        <button
+                            class="btn btn--primary btn--small modal__btn btn-not-margin js-toggle"
+                            toggle-target="#modal-add-address"
+                        >
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal__opacity"></div>
+        </div>
+
+        <!-- thư viện validation mình viết -->
+        <script src="./assets/js/validation.js"></script>
+
+        <script>
+            Validator("#form-address", {
+                onSubmit: (data) => {
+                    console.log(data);
+                },
+            });
+            // Mong muốn khi sữ dụng thư viện này
+            // chỉ cần chuyền form mà mình muốn validator thôi không cần gọi gì hêt
+            // và truyền thuộc tính rules cần thiết vào thẻ input
+            // vi du
+            // <input name="fullname" rules="required"></input>;
+        </script>
     </body>
 </html>

@@ -4,37 +4,77 @@
     inset: 0;
 }
 
-.dialog {
+.modal {
     @extend %full-screen;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 99;
 
-    transition: all 0.3s linear;
+    transition: all 0.2s;
     opacity: 0;
     visibility: hidden;
     scale: 0;
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 141.667%;
+    }
+
+    &__close {
+        padding: 10px;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 2;
+        opacity: 0.7;
+        top: 6px;
+        right: 20px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 
     &.show {
         opacity: 1;
         visibility: visible;
         scale: 1;
     }
+
+    &--small &__inner {
+        --modal-width: 400px;
+    }
+
+    &--large &__inner {
+        --modal-width: 1110px;
+    }
+
+    &--fill &__inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
     &__inner {
-        max-width: min(450px, 100% - 40px);
+        width: min(var(--modal-width, 800px), 100% - 40px);
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
         position: relative;
         z-index: 1;
         padding: 30px;
         border-radius: 20px;
         background: var(--dialog-bg);
         box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+        @include abstracts.screen(md) {
+            padding: 20px;
+        }
     }
 
     &__text {
         font-size: 1.8rem;
         font-weight: 500;
-        line-height: 150%
+        line-height: 150%;
     }
 
     &__opacity {
@@ -49,6 +89,12 @@
         justify-content: flex-end;
         flex-wrap: wrap;
         gap: 30px;
+         @include abstracts.screen(md) {
+            gap: 0;
+            margin-top: 20px;
+        }
+
+
     }
 
     @include abstracts.screen(md) {

@@ -111,7 +111,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -164,7 +164,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -217,7 +217,7 @@
                                                         Save
                                                     </button>
 
-                                                    <button class="cart__btn js-toggle" toggle-target="#dialog-delete">
+                                                    <button class="cart__btn js-toggle" toggle-target="#modal-delete">
                                                         <img src="./assets/icons/trash.svg" alt="" />
                                                         Delete
                                                     </button>
@@ -322,20 +322,20 @@
             load("#footer", "./template/footer.html");
         </script>
 
-        <div class="dialog hide" id="dialog-delete">
-            <div class="dialog__inner">
-                <h4 class="dialog__text">The product will be removed from the cart</h4>
-                <div class="dialog__bottom">
-                    <button class="btn btn--text dialog__btn js-toggle" toggle-target="#dialog-delete">Cancel</button>
+        <div class="modal hide" id="modal-delete">
+            <div class="modal__inner">
+                <h4 class="modal__text">The product will be removed from the cart</h4>
+                <div class="modal__bottom">
+                    <button class="btn btn--text modal__btn js-toggle" toggle-target="#modal-delete">Cancel</button>
                     <button
-                        class="btn btn--primary btn--small dialog__btn btn-not-margin js-toggle"
-                        toggle-target="#dialog-delete"
+                        class="btn btn--primary btn--small modal__btn btn-not-margin js-toggle"
+                        toggle-target="#modal-delete"
                     >
                         Confirm
                     </button>
                 </div>
             </div>
-            <div class="dialog__opacity js-toggle" toggle-target="#dialog-delete"></div>
+            <div class="modal__opacity js-toggle" toggle-target="#modal-delete"></div>
         </div>
     </body>
 </html>
