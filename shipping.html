@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <!-- dark -->
     <head>
         <meta charset="UTF-8" />
@@ -48,21 +48,21 @@
                 <div class="checkout__container">
                     <div class="breadcrumb checkout__breadcrumb">
                         <ul class="breadcrumb__list">
-                            <li>
+                            <li class="form__options-item">
                                 <a href="#!" class="breadcrumb__item">
                                     Home
                                     <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
                                 </a>
                             </li>
 
-                            <li>
+                            <li class="form__options-item">
                                 <a href="#!" class="breadcrumb__item">
                                     Checkout
                                     <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
                                 </a>
                             </li>
 
-                            <li>
+                            <li class="form__options-item">
                                 <a href="#!" class="breadcrumb__item breadcrumb__item--active"> Shipping </a>
                             </li>
                         </ul>
@@ -131,8 +131,8 @@
                                                             </p>
 
                                                             <ul class="address__item-list">
-                                                                <li>Shipping</li>
-                                                                <li>Delivery from store</li>
+                                                                <li class="form__options-item">Shipping</li>
+                                                                <li class="form__options-item">Delivery from store</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -175,8 +175,8 @@
                                                             </p>
 
                                                             <ul class="address__item-list">
-                                                                <li>Shipping</li>
-                                                                <li>Delivery from store</li>
+                                                                <li class="form__options-item">Shipping</li>
+                                                                <li class="form__options-item">Delivery from store</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -460,7 +460,7 @@
         </div>
 
         <!-- Modal: Add new shipping address -->
-        <div class="modal hide" id="modal-add-address" style="--modal-width: 650px">
+        <div class="modal show" id="modal-add-address" style="--modal-width: 650px">
             <div class="modal__inner">
                 <form action="" class="form" id="form-address">
                     <div class="modal__body">
@@ -531,10 +531,115 @@
                                     name="select-address"
                                     rules="required"
                                     placeholder="City/District/Town"
-                                    class="form__input"
+                                    class="form__input js-toggle"
+                                    toggle-target="#form-dialog"
                                     required
+                                    readonly="False"
                                 />
                                 <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+
+                                <div class="form__select-dialog show" id="form-dialog">
+                                    <div class="form__search">
+                                        <input type="text" placeholder="Search" class="form__search-input" />
+                                        <img src="./assets/icons/search.svg" class="form__search-icon icon" alt="" />
+                                    </div>
+                                    <div class="form__row form__options">
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-city"
+                                            >
+                                                City
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-city">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-district"
+                                            >
+                                                District
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-district">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-town"
+                                            >
+                                                Town
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-town">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-address__btn-wrap">
+                                        <button
+                                            class="btn btn--text form-address__btn js-toggle"
+                                            toggle-target="#form-dialog"
+                                        >
+                                            Cancle
+                                        </button>
+                                        <button
+                                            class="btn btn--primary form-address__btn js-toggle"
+                                            toggle-target="#form-dialog"
+                                        >
+                                            Ok
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                             <span class="form__message"></span>
                         </div>
