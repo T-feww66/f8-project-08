@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <!-- dark -->
     <head>
         <meta charset="UTF-8" />
@@ -49,14 +49,14 @@
                     <div class="breadcrumb checkout__breadcrumb">
                         <ul class="breadcrumb__list">
                             <li>
-                                <a href="#!" class="breadcrumb__item">
+                                <a href="./index-logined.html" class="breadcrumb__item">
                                     Home
                                     <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#!" class="breadcrumb__item breadcrumb__item--active"> Checkout </a>
+                                <a href="./checkout.html" class="breadcrumb__item breadcrumb__item--active"> Checkout </a>
                             </li>
                         </ul>
                     </div>
@@ -322,17 +322,12 @@
             load("#footer", "./template/footer.html");
         </script>
 
-        <div class="modal hide" id="modal-delete">
+        <div class="modal modal--small hide" id="modal-delete">
             <div class="modal__inner">
                 <h4 class="modal__text">The product will be removed from the cart</h4>
                 <div class="modal__bottom">
-                    <button class="btn btn--text modal__btn js-toggle" toggle-target="#modal-delete">Cancel</button>
-                    <button
-                        class="btn btn--primary btn--small modal__btn btn-not-margin js-toggle"
-                        toggle-target="#modal-delete"
-                    >
-                        Confirm
-                    </button>
+                    <button class="btn btn--outline modal__btn js-toggle" toggle-target="#modal-delete">Cancel</button>
+                    <button class="btn btn--dange modal__btn btn-not-margin">Delete</button>
                 </div>
             </div>
             <div class="modal__opacity js-toggle" toggle-target="#modal-delete"></div>

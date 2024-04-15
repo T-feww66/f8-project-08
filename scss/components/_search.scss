@@ -6,9 +6,10 @@
     background: var(--search-bg);
 
     &__input {
+        height: 100%;
         padding-left: 15px;
         flex: 1;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 500;
         line-height:  142.857%;
 

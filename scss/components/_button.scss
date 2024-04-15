@@ -75,6 +75,11 @@
         border-radius: 99px;
     }
 
+    &--dange {
+        color: #fff;
+        background-color: #ea3c3c;
+    }
+
     &[disabled],
     &--disabled {
         opacity: 0.5;

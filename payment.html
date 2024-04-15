@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <!-- dark -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- link fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- link css -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <!-- boxicons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <!-- link scripts -->
+        <script src="./assets/js/scripts.js"></script>
+        <title>Checkout | Coffee Grocery</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./template/header-logined.html");
+        </script>
+        <!-- Main -->
+        <main class="checkout">
+            <div class="container">
+                <!-- Search -->
+                <div class="checkout__container">
+                    <div class="search d-none d-md-flex">
+                        <input type="text" name="" placeholder="Search for item" id="" class="search__input" />
+                        <button class="search__btn">
+                            <img src="./assets/icons/search.svg" alt="" class="search__icon icon" />
+                        </button>
+                    </div>
+                </div>
+                <!-- Breadcrumb -->
+                <div class="checkout__container">
+                    <div class="breadcrumb checkout__breadcrumb">
+                        <ul class="breadcrumb__list">
+                            <li>
+                                <a href="./index-logined.html" class="breadcrumb__item">
+                                    Home
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="./checkout.html" class="breadcrumb__item">
+                                    Checkout
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="./shipping.html" class="breadcrumb__item">
+                                    Shipping
+                                    <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumb__icon" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="./payment.html" class="breadcrumb__item breadcrumb__item--active">
+                                    Payment method
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- cart info address user -->
+                <div class="checkout__container">
+                    <div class="row gy-xl-3">
+                        <div class="col-8 col-lg-12">
+                            <div class="cart">
+                                <!-- cart info user address -->
+                                <div class="cart__row payment__top-row">
+                                    <h2 class="cart__sub-heading">
+                                        1. Shipping, arrives between Mon, May 16—Tue, May 24
+                                    </h2>
+
+                                    <div class="cart__edit-wrap">
+                                        <a href="./shipping.html" class="cart__edit">
+                                            <img src="./assets/icons/edit.svg" alt="" class="icon" />
+                                            Edit
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- payment item 1 -->
+                                <article class="payment__item">
+                                    <div class="payment__item-info">
+                                        <h3 class="payment__heading">Imran Khan</h3>
+                                        <p class="payment__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+                                    </div>
+                                    <img src="./assets/icons/icon-checkbox.svg" alt="" />
+                                </article>
+
+                                <!-- payment item 2 -->
+                                <article class="payment__item">
+                                    <div class="payment__item-info">
+                                        <h3 class="payment__heading">Items details</h3>
+                                        <p class="payment__desc">2 items</p>
+                                    </div>
+                                    <a href="./checkout.html" class="payment__desc payment__desc-link"> View details</a>
+                                </article>
+                            </div>
+
+                            <div class="cart">
+                                <!-- cart info user address -->
+                                <h2 class="cart__sub-heading">2. Shipping method</h2>
+                                <div class="cart__info-separate"></div>
+                                <h3 class="cart__sub-heading-lv2">Availeble Shipping method</h3>
+
+                                <!-- payment delivery 1 -->
+                                <article class="payment__item checked-input">
+                                    <img
+                                        src="./assets/img/payment/payment-delivery-1.png"
+                                        alt=""
+                                        class="payment__thumb"
+                                    />
+                                    <div class="payment__item-content">
+                                        <div class="payment__item-info">
+                                            <h3 class="payment__heading">Fedex Delivery</h3>
+                                            <p class="payment__desc payment__desc--low">Delivery: 2-3 days work</p>
+                                        </div>
+                                        <div class="payment__item-costs">
+                                            <label class="cart__select payment__item-checked checked__item">
+                                                <input
+                                                    type="radio"
+                                                    name="delivery-method"
+                                                    class="cart__select-checkbox payment__item-checkbox"
+                                                />
+                                                <span class="payment__item-price">Free</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- payment delivery 2 -->
+                                <article class="payment__item checked-input">
+                                    <img
+                                        src="./assets/img/payment/payment-delivery-2.png"
+                                        alt=""
+                                        class="payment__thumb"
+                                    />
+                                    <div class="payment__item-content">
+                                        <div class="payment__item-info">
+                                            <h3 class="payment__heading">DHL Delivery</h3>
+                                            <p class="payment__desc payment__desc--low">Delivery: 2-3 days work</p>
+                                        </div>
+                                        <div class="payment__item-costs">
+                                            <label class="cart__select payment__item-checked checked__item">
+                                                <input
+                                                    type="radio"
+                                                    name="delivery-method"
+                                                    class="cart__select-checkbox payment__item-checkbox"
+                                                />
+                                                <span class="payment__item-price">$12.00</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-12">
+                            <div class="cart">
+                                <div class="cart__checkout">
+                                    <h2 class="cart__sub-heading">Payment Details</h2>
+                                    <p class="cart__desc">
+                                        Complete your purchase item by providing your payment details order.
+                                    </p>
+                                    <!-- Payment details -->
+                                    <form action="" class="form cart__form" id="form-3">
+                                        <!-- Email -->
+                                        <div class="form__group">
+                                            <label for="email" class="form__label form__label--medium"
+                                                >Email Address</label
+                                            >
+                                            <div class="form__text-input">
+                                                <input
+                                                    type="email"
+                                                    id="email"
+                                                    name="email"
+                                                    rules="required|email"
+                                                    placeholder="example@gmail.com"
+                                                    class="form__input"
+                                                />
+                                                <img
+                                                    src="./assets/img/auth/lock.svg"
+                                                    alt=""
+                                                    class="form__input-icon form__icon"
+                                                />
+                                            </div>
+                                            <span class="form__message"></span>
+                                        </div>
+
+                                        <!-- Card Holder -->
+                                        <div class="form__group">
+                                            <label for="card-holder" class="form__label form__label--medium"
+                                                >Card Holder</label
+                                            >
+                                            <div class="form__text-input">
+                                                <input
+                                                    type="email"
+                                                    id="card-holder"
+                                                    name="card-holder"
+                                                    rules="required|email"
+                                                    placeholder="example@gmail.com"
+                                                    class="form__input"
+                                                />
+                                                <img
+                                                    src="./assets/img/auth/lock.svg"
+                                                    alt=""
+                                                    class="form__input-icon form__icon"
+                                                />
+                                            </div>
+                                            <span class="form__message"></span>
+                                        </div>
+
+                                        <!-- Card Details -->
+                                        <div class="form__group">
+                                            <label for="card-details" class="form__label form__label--medium"
+                                                >Card Details</label
+                                            >
+                                            <div class="form__text-input">
+                                                <input
+                                                    type="email"
+                                                    id="card-details"
+                                                    name="card-details"
+                                                    rules="required|email"
+                                                    placeholder="example@gmail.com"
+                                                    class="form__input"
+                                                />
+                                                <img
+                                                    src="./assets/img/auth/lock.svg"
+                                                    alt=""
+                                                    class="form__input-icon form__icon"
+                                                />
+                                            </div>
+                                            <span class="form__message"></span>
+                                        </div>
+                                    </form>
+
+                                    <div class="cart__info-row">
+                                        <span>Subtotal <span class="cart__info-row-sub">(items)</span></span>
+                                        <span>3</span>
+                                    </div>
+
+                                    <div class="cart__info-row">
+                                        <span>Price <span class="cart__info-row-sub">(Total)</span></span>
+                                        <span>$191.65</span>
+                                    </div>
+
+                                    <div class="cart__info-row">
+                                        <span>Shipping</span>
+                                        <span>$10.00</span>
+                                    </div>
+
+                                    <div class="cart__info-separate"></div>
+
+                                    <div class="cart__info-row">
+                                        <span>Estimated Total</span>
+                                        <span>$201.65</span>
+                                    </div>
+
+                                    <button class="btn btn--primary btn--rounded payment__btn">Pay $465.98</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./template/footer.html");
+        </script>
+
+        <!-- Dialog / Model -->
+        <div class="modal modal--small hide" id="modal-delete">
+            <div class="modal__inner">
+                <h4 class="modal__text">The product will be removed from the cart</h4>
+                <div class="modal__bottom">
+                    <button class="btn btn--outline modal__btn js-toggle" toggle-target="#modal-delete">Cancel</button>
+                    <button class="btn btn--dange modal__btn btn-not-margin">Delete</button>
+                </div>
+            </div>
+            <div class="modal__opacity js-toggle" toggle-target="#modal-delete"></div>
+        </div>
+
+        <!-- Modal: Add new shipping address -->
+        <div class="modal hide" id="modal-add-address" style="--modal-width: 650px">
+            <div class="modal__inner">
+                <form action="" class="form" id="form-address">
+                    <div class="modal__body">
+                        <h2 class="modal__heading">Add new shipping address</h2>
+                        <div class="form__row">
+                            <!-- Name -->
+                            <div class="form__group">
+                                <label for="name" class="form__label form__label--small">Name</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        rules="required"
+                                        placeholder="Name"
+                                        class="form__input"
+                                        required
+                                    />
+                                    <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                                </div>
+                                <span class="form__message"></span>
+                            </div>
+                            <!-- Phone -->
+                            <div class="form__group">
+                                <label for="phone" class="form__label form__label--small">Phone</label>
+                                <div class="form__text-input form__text-input--small">
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        rules="required|min:10"
+                                        placeholder="Phone"
+                                        class="form__input"
+                                        required
+                                    />
+                                    <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                                </div>
+                                <span class="form__message"></span>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="form__group">
+                            <label for="address" class="form__label form__label--small">Address</label>
+
+                            <div class="form__text-area">
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    rules="required"
+                                    placeholder="Address (Area and street)"
+                                    class="form__textarea"
+                                    required
+                                ></textarea>
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+                            </div>
+                            <span class="form__message"></span>
+                        </div>
+                        <!-- Select address -->
+                        <div class="form__group">
+                            <label for="select-address" class="form__label form__label--small"
+                                >Select your address</label
+                            >
+                            <div class="form__text-input form__text-input--small">
+                                <input
+                                    type="text"
+                                    id="select-address"
+                                    name="select-address"
+                                    rules="required"
+                                    placeholder="City/District/Town"
+                                    class="form__input js-toggle"
+                                    toggle-target="#form-dialog"
+                                    required
+                                    readonly
+                                />
+                                <img src="./assets/img/auth/lock.svg" alt="" class="form__input-icon form__icon" />
+
+                                <div class="form__select-dialog hide" id="form-dialog">
+                                    <span class="form__close d-none d-sm-block js-toggle" toggle-target="#form-dialog"
+                                        >&times</span
+                                    >
+                                    <div class="form__search">
+                                        <input type="text" placeholder="Search" class="form__search-input" />
+                                        <img src="./assets/icons/search.svg" class="form__search-icon icon" alt="" />
+                                    </div>
+                                    <div class="form__row form__options">
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-city"
+                                            >
+                                                City
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-city">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-district"
+                                            >
+                                                District
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-district">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="form__options-wrap">
+                                            <div
+                                                class="form__options-select js-toggle"
+                                                toggle-target="#form__options-town"
+                                            >
+                                                Town
+                                                <img
+                                                    src="./assets/icons/arrow-down-2.svg"
+                                                    class="form__options-icon icon"
+                                                    alt=""
+                                                />
+                                            </div>
+
+                                            <ul class="form__options-list hide" id="form__options-town">
+                                                <li class="form__options-item form__options-item--current">Ha Noi 1</li>
+                                                <li class="form__options-item">Ha Noi 2</li>
+                                                <li class="form__options-item">Ha Noi 3</li>
+                                                <li class="form__options-item">Ha Noi 4</li>
+                                                <li class="form__options-item">Ha Noi 5</li>
+                                                <li class="form__options-item">Ha Noi 6</li>
+                                                <li class="form__options-item">Ha Noi 7</li>
+                                                <li class="form__options-item">Ha Noi 8</li>
+                                                <li class="form__options-item">Ha Noi 9</li>
+                                                <li class="form__options-item">Ha Noi 10</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-address__btn-wrap">
+                                        <button
+                                            class="btn btn--text form-address__btn js-toggle"
+                                            toggle-target="#form-dialog"
+                                        >
+                                            Cancle
+                                        </button>
+                                        <button
+                                            class="btn btn--primary form-address__btn js-toggle"
+                                            toggle-target="#form-dialog"
+                                        >
+                                            Ok
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="form__message"></span>
+                        </div>
+                        <!-- Default address  -->
+                        <div class="form__group">
+                            <label class="form__checkbox">
+                                <input type="checkbox" name="" id="" class="form__checkbox-input d-none" required />
+                                <span class="form__checkbox-label">Set as default address</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal__bottom">
+                        <button class="btn btn--text modal__btn js-toggle" toggle-target="#modal-add-address">
+                            Cancel
+                        </button>
+                        <button class="btn btn--primary btn--small modal__btn btn-not-margin form__submit-btn">
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal__opacity"></div>
+        </div>
+
+        <!-- thư viện validation mình viết -->
+        <script src="./assets/js/validation.js"></script>
+
+        <script>
+            Validator("#form-3", {
+                onSubmit: (data) => {
+                    console.log(data);
+                },
+            });
+            // Mong muốn khi sữ dụng thư viện này
+            // chỉ cần chuyền form mà mình muốn validator thôi không cần gọi gì hêt
+            // và truyền thuộc tính rules cần thiết vào thẻ input
+            // vi du
+            // <input name="fullname" rules="required"></input>;
+        </script>
+    </body>
+</html>

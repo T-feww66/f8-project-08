@@ -259,3 +259,32 @@ window.addEventListener("template-loaded", () => {
         });
     });
 });
+
+// Payment click select
+
+/**
+ * them class checked-input vao cac the bao boc can check
+ * them class checked__item vao label bao quanh input can checked
+ * can co mot the label bao boc quanh input moi co the su dung 
+ */
+window.addEventListener("template-loaded", () => {
+    const paymentDeliverys = document.querySelectorAll(".checked-input");
+    const inputPaymentCls = "checked__item";
+
+    if (paymentDeliverys) {
+        paymentDeliverys.forEach((paymentDelivery, index) => {
+            paymentDelivery.onclick = () => {
+                const inputPayment = paymentDelivery.querySelector(`.${inputPaymentCls}`);
+                if (inputPayment) {
+                    if (inputPayment.checked) {
+                        inputPayment.click();
+                    } else {
+                        inputPayment.click();
+                    }
+                } else {
+                    alert(`Vui long them class ${inputPaymentCls} vao input can check`);
+                }
+            };
+        });
+    }
+});
