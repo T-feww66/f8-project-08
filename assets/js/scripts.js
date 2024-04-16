@@ -265,16 +265,23 @@ window.addEventListener("template-loaded", () => {
 /**
  * them class checked-input vao cac the bao boc can check
  * them class checked__item vao label bao quanh input can checked
- * can co mot the label bao boc quanh input moi co the su dung 
+ * can co mot the label bao boc quanh input moi co the su dung
+ */
+
+/**
+ * Cách chọn tất cả sản phẩm
+ * cho class checked-all vào input cần check tất cả hoặc bỏ chọn tất cả
+ * chọn class checked__item vào các input muốn đồng loạt checked hoặc unchecked
  */
 window.addEventListener("template-loaded", () => {
     const paymentDeliverys = document.querySelectorAll(".checked-input");
-    const inputPaymentCls = "checked__item";
+    const inputCheckedAllCls = "checked-all";
+    const inputCheckedCls = "checked__item";
 
     if (paymentDeliverys) {
         paymentDeliverys.forEach((paymentDelivery, index) => {
             paymentDelivery.onclick = () => {
-                const inputPayment = paymentDelivery.querySelector(`.${inputPaymentCls}`);
+                const inputPayment = paymentDelivery.querySelector(`.${inputCheckedCls}`);
                 if (inputPayment) {
                     if (inputPayment.checked) {
                         inputPayment.click();
@@ -282,9 +289,29 @@ window.addEventListener("template-loaded", () => {
                         inputPayment.click();
                     }
                 } else {
-                    alert(`Vui long them class ${inputPaymentCls} vao input can check`);
+                    alert(`Vui long them class ${inputCheckedCls} vao input can check`);
                 }
             };
         });
+    }
+
+    const checkedAll = document.querySelector(`.${inputCheckedAllCls}`);
+    if (checkedAll) {
+        checkedAll.onclick = () => {
+            const inputCheckeds = document.querySelectorAll(`.${inputCheckedCls}`);
+            if (checkedAll.checked) {
+                for (input of inputCheckeds) {
+                    if (!input.checked) {
+                        input.click();
+                    }
+                }
+            } else {
+                for (input of inputCheckeds) {
+                    if (input.checked) {
+                        input.click();
+                    }
+                }
+            }
+        };
     }
 });

@@ -46,13 +46,12 @@
         padding: 30px 0;
         border-bottom: 1px solid var(--cart-border-color);
         display: flex;
-        align-items: center;
-        gap: 30px;
+        align-items: flex-start;
+        // gap: 30px;
 
         @include abstracts.screen(md) {
-            align-items: flex-start;
             padding: 16px 0;
-            gap: 16px;
+            // gap: 16px;
 
             &:last-child {
                 border: none;
@@ -68,12 +67,12 @@
             flex-direction: column;
         }
         &-title {
-            max-width: 374px;
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 144.444%;
 
             @include abstracts.screen(md) {
+                max-width: 374px;
                 font-size: 1.4rem;
                 line-height: 142.857%;
             }
@@ -82,14 +81,17 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-
-            @include abstracts.screen(xl) {
-                align-items: flex-end;
-            }
+            align-items: flex-end;
+            gap: 30px;
 
             @include abstracts.screen(lg) {
-                margin-top: 16px;
+                margin-top: 20px;
                 align-items: flex-start;
+            }
+
+            @include abstracts.screen(sm) {
+                margin-top: 10px;
+                gap: 10px;
             }
         }
 
@@ -120,6 +122,7 @@
         width: 172px;
         height: 172px;
         object-fit: contain;
+        margin: 0 30px 0 20px;
 
         @include abstracts.screen(lg) {
             width: 150px;
@@ -129,6 +132,7 @@
         @include abstracts.screen(md) {
             width: 70px;
             height: 70px;
+            margin: 0 16px;
         }
     }
 
@@ -136,6 +140,13 @@
         display: flex;
         align-items: center;
         gap: 20px;
+
+        &-lg--block {
+            @include abstracts.screen(lg) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
 
         &-btn {
             margin-top: auto;
@@ -148,6 +159,16 @@
                 flex-direction: column;
                 gap: 10px;
             }
+        }
+    }
+
+    &__input-wrap {
+        display: flex;
+        gap: 30px;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            gap: 16px;
         }
     }
 
@@ -198,7 +219,21 @@
 
     // Cart bottom
     &__bottom {
-        margin-top: 30px;
+        padding-top: 30px;
+
+        @include abstracts.screen(md) {
+            border-top: 1px solid #d2d1d6;
+            padding-top: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &-btn {
+            margin-left: auto;
+
+            @include abstracts.screen(md) {
+                margin-left: 0;
+            }
+        }
 
         &-continue {
             height: 100%;
@@ -222,6 +257,11 @@
             font-size: 2.2rem;
             height: 68px;
             padding: 0 40px;
+
+            @include abstracts.screen(md) {
+                font-size: 1.8rem;
+                height: 48px;
+            }
         }
     }
 
@@ -255,6 +295,14 @@
         &-sub {
             font-size: 1.6rem;
             font-weight: 400;
+        }
+    }
+
+    &__info-btn {
+        margin-top: auto;
+
+        @include abstracts.screen(lg) {
+            width: min(200px, 70%);
         }
     }
 
@@ -330,6 +378,11 @@
             &:checked::before {
                 content: url(../icons/icon-checkbox.svg);
             }
+        }
+
+        // checked checked all
+        &-all {
+            margin: 30px auto;
         }
     }
 
@@ -425,8 +478,6 @@
         margin-top: 4px;
         font-size: 1.5rem;
         line-height: 146.667%;
-
-        
 
         @include abstracts.screen(md) {
             font-size: 1.4rem;
