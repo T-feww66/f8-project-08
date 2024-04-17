@@ -223,6 +223,18 @@ u {
   background: #d2d1d6;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .col, .row[class*=row-cols-] > *,
 .row [class*=col-], .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) / 2);
@@ -4678,6 +4690,57 @@ html {
   width: 42px;
   height: 28px;
   object-fit: cover;
+}
+
+.form-card__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form-card__label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .form-card__label {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+    line-height: 146.667%;
+  }
+}
+.form-card__row {
+  align-items: initial;
+}
+.form-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.form-card__btn {
+  margin-top: 30px;
+}
+@media (max-width: 767.98px) {
+  .form-card__btn {
+    margin-top: 20px;
+    flex: 1;
+    gap: 10px;
+  }
+}
+.form-card__input {
+  position: relative;
+}
+.form-card__input::before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--checkout-cart-bg);
 }
 
 /*# sourceMappingURL=main.css.map */

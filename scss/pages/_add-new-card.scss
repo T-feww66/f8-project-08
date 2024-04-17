@@ -1,0 +1,55 @@
+@use "../abstracts";
+.form-card {
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+            line-height: 146.667%;
+        }
+    }
+
+    &__row {
+        align-items: initial;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 30px;
+    }
+
+    &__btn {
+        margin-top: 30px;
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+            flex: 1;
+            gap: 10px;
+        }
+    }
+
+    &__input {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--checkout-cart-bg);
+        }
+    }
+}
