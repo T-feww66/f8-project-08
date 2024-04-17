@@ -96,8 +96,16 @@ html.dark {
     --dialog-bg: #242f3c;
     --dialog-shadow: rgba(23, 28, 40, 0.4);
     --dialog-form-bg: #242f3c;
-    --dialog-form-shadow:rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --dialog-form-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 
-     // Payment
-     --payment-item-bg: #292E39;
+    // Payment
+    --payment-item-bg: #292e39;
+
+    // profile
+    --profile-sidebar-bg: #171c28;
+    --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+    --profile-user-shadow: rgba(23, 28, 40, 0.2);
+
+    --account-info-bg: #292E39;
+    --account-info-icon: #171C28;
 }

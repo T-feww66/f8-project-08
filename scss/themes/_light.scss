@@ -110,4 +110,13 @@ html {
 
     // Payment
     --payment-item-bg: #f6f6f6;
+
+    // profile
+    --profile-sidebar-bg: #fff;
+    --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+    --profile-user-bglinear: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%);
+    --profile-user-shadow: rgba(237, 237, 246, 0.2);
+
+    --account-info-bg: #f6f6f6;
+    --account-info-icon: #fff;
 }

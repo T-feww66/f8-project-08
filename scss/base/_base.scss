@@ -46,9 +46,9 @@ input {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     transition: background-color 1s 999999s;
     -webkit-text-fill-color: var(--text-color) !important;
     caret-color: var(--text-color);
@@ -82,4 +82,10 @@ strong {
 
 u {
     text-decoration: underline;
+}
+
+.separate {
+    margin: var(--margin) 0;
+    height: 1px;
+    background: #d2d1d6;
 }
